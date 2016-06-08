@@ -30,6 +30,7 @@
 
 * Project(项目)
 * Resume(简历)
+* Personal introduction(个人介绍)
 
 
 
