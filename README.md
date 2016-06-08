@@ -24,11 +24,12 @@
 ###第五部分
 
 * ReadingNotes(读书笔记)
-* InterviewExperience(面试经验)
+* Project(项目)
+
 
 ###第六部分
 
-* Project(项目)
+* InterviewExperience(面试经验)
 * Resume(简历)
 * Personal introduction(个人介绍)
 
