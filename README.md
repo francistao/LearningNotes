@@ -41,7 +41,7 @@
  
  	* [面向对象六大原则](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/常见的面向对象设计原则.md)
  	* [单例模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/单例模式.md)
- 	* Builder模式
+ 	* [Builder模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/Builder模式.md)
  	* 原型模式
  	* [简单工厂](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/简单工厂.md)
  	* 工厂方法模式
