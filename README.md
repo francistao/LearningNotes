@@ -5,7 +5,7 @@
 
 * [Android(安卓)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/Android)
 
-	* Android基础知识
+	* [Android基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android基础知识.md)
  	* [Android内存泄漏总结](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
  	* [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
   	* [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
@@ -68,7 +68,10 @@
  
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
-* [JavaConcurrent(Java并发)]()
+	* JVM基础
+	* JVM内存模型
+	* 垃圾回收算法 
+* [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
  
  ---
  
