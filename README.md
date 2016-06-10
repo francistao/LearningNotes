@@ -107,8 +107,8 @@
 
 ##第四部分
 
- * [Network(网络)]()
- 	* TCP/UDP
+ * [Network(网络)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/Network)
+ 	* [TCP/UDP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/TCP与UDP.md)
  	* [HTTP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/Http协议.md)
  	* [Socket](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/Socket.md)
  * [OperatingSystem(操作系统)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/OperatingSystem)
@@ -126,7 +126,7 @@
  	* [《Android开发艺术探索》第四章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第四章笔记.md)
  	* [《Android开发艺术探索》第八章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第八章笔记.md)
  	* [《Android开发艺术探索》第十五章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第十五章笔记.md)
- 	* [深入理解Java虚拟机》第12章](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《深入理解java虚拟机》第12章.md)
+ 	* [《深入理解Java虚拟机》第12章](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《深入理解java虚拟机》第12章.md)
  	
  	
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
