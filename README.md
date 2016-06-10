@@ -15,9 +15,11 @@
  	* [事件分发机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/事件分发机制.md)
  	* [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
  	* [Art和Dalvik的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Art和Dalvik区别.md)
+ 	* OOM问题
  	* APP启动过程
  	* Activity启动流程以及界面展示过程
  	* 图片三级缓存
+ 	* 热修复的原理
  	* AIDL
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
  	* Zygote的启动过程
@@ -27,6 +29,8 @@
  	* Glide源码分析
  	* EventBus源码分析
  	* RxJava
+ 	* 设计一套图片异步加载缓存方案
+ 	* Android UI适配
 
 ---
  
@@ -67,6 +71,7 @@
 ##第二部分
  
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
+	* Java中的内存泄漏
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
 	* JVM基础
 	* JVM内存模型
@@ -79,7 +84,15 @@
 ##第三部分
  
  * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
+ 	* 数组
+ 	* 链表
+ 	* 栈和队列
+ 	* 字符串
+ 	* 树
+ 	* 图
  * [Algorithm(算法)]()
+ 	* 排序
+ 	* 查找
  	* 《剑指Offer》
  	* 《程序员面试金典》
  
@@ -88,6 +101,9 @@
 ##第四部分
 
  * [Network(网络)]()
+ 	* TCP/UDP
+ 	* HTTP
+ 	* Socket
  * [OperatingSystem(操作系统)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/OperatingSystem)
  
 ---
@@ -113,15 +129,7 @@
 ##第六部分
  
  * [InterviewExperience(面试经验)]()
- 	* [阿里巴巴]()
- 	* [腾讯]()
- 	* [奇虎360]()
- 	* [豌豆荚]()
- 	* [今日头条]()
- 	* [饿了么]()
- 	* [美团]()
- 	* [豆瓣]()
- 	* [蜻蜓FM]()
+
 
 ---
  	
@@ -131,7 +139,6 @@
  ---
  
 有任何问题欢迎联系：
- 
 geniusvjr@gmail.com
 
 拒绝任何形式的商业用途。

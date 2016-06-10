@@ -138,8 +138,19 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 **目前能否保证service不被杀死**
 
 
+---
+
+
 **动画有哪两类，各有什么特点？三种动画的区别**
 
+* tween 补间动画。通过指定View的初末状态和变化时间、方式，对View的内容完成一系列的图形变换来实现动画效果。
+Alpha
+Scale
+Translate
+Rotate。
+* frame 帧动画
+AnimationDrawable 控制
+animation-list xml布局
 ---
 
 **Android的数据存储形式。**
