@@ -73,8 +73,8 @@
 ##第二部分
  
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
-	* Java基础知识
-	* Java中的内存泄漏
+	* [Java基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java基础知识.md)
+	* [Java中的内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java中的内存泄漏.md)
 	
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
 	* [JVM基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM.md)
@@ -82,7 +82,7 @@
 	* [Java内存区域与内存溢出](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/Java内存区域与内存溢出.md)
 	* 垃圾回收算法 
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
-	* Java并发基础知识
+	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
  
  ---
@@ -144,7 +144,7 @@
  * [Resume(简历)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6)
  	* [陶程简历](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/陶程-本科-Android.md)
  
- ---
+---
  
 有任何问题欢迎联系：
 geniusvjr@gmail.com
