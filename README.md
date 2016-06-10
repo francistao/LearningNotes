@@ -66,10 +66,6 @@
 ##第二部分
  
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
 * [JavaConcurrent(Java并发)]()
  
