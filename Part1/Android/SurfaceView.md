@@ -16,7 +16,7 @@
 3. unlockCanvasAndPost(canvas):释放绘图、提交所绘制的图形，需要注意，当调用SurfaceHolder上的unlockCanvasAndPost方法之后，该方法之前所绘制的图形还处于缓冲之中，下一次lockCanvas()方法锁定的区域可能会“遮挡”它
 
 
-``
+```
 
 	public class SurfaceViewTest extends Activity
 {
@@ -98,9 +98,11 @@
 		});
 	}
 	}
- ``
+	
+ ```
 
 上面的程序为SurfaceHolder添加了一个CallBack实例，该Callback中定义了如下三个方法：
+
 * void surfaceChanged(SurfaceHolder holder, int format, int width, int height):当一个surface的格式或大小发生改变时回调该方法。
 * void surfaceCreated(SurfaceHolder holder):当surface被创建时回调该方法
 * void surfaceDestroyed(SurfaceHolder holder):当surface将要被销毁时回调该方法

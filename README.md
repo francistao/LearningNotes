@@ -15,7 +15,9 @@
  	* [事件分发机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/事件分发机制.md)
  	* [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
  	* [Art和Dalvik的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Art和Dalvik区别.md)
- 	* OOM问题
+ 	* [Android关于OOM的解决方案](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android关于oom的解决方案.md)
+ 	* [Fragment](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Fragment.md)
+ 	* [SurfaceView](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/SurfaceView.md)
  	* APP启动过程
  	* Activity启动流程以及界面展示过程
  	* 图片三级缓存
@@ -71,12 +73,17 @@
 ##第二部分
  
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
+	* Java基础知识
 	* Java中的内存泄漏
+	
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
-	* JVM基础
-	* JVM内存模型
+	* [JVM基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM.md)
+	* [JVM类加载机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM类加载机制.md)
+	* [Java内存区域与内存溢出](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/Java内存区域与内存溢出.md)
 	* 垃圾回收算法 
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
+	* Java并发基础知识
+	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
  
  ---
  
@@ -102,8 +109,8 @@
 
  * [Network(网络)]()
  	* TCP/UDP
- 	* HTTP
- 	* Socket
+ 	* [HTTP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/Http协议.md)
+ 	* [Socket](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/Socket.md)
  * [OperatingSystem(操作系统)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/OperatingSystem)
  
 ---
@@ -119,6 +126,7 @@
  	* [《Android开发艺术探索》第四章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第四章笔记.md)
  	* [《Android开发艺术探索》第八章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第八章笔记.md)
  	* [《Android开发艺术探索》第十五章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第十五章笔记.md)
+ 	* [深入理解Java虚拟机》第12章](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《深入理解java虚拟机》第12章.md)
  	
  	
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
