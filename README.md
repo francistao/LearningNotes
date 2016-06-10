@@ -25,7 +25,7 @@
  	* AIDL
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
  	* Zygote的启动过程
- 	* Android中的MVC，MVP和MVVM
+ 	* [Android中的MVC，MVP和MVVM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVC%2CMVP%2CMVVM的区别.md)
  	* Android系统启动流程
  	* Retrofit源码分析
  	* Glide源码分析
