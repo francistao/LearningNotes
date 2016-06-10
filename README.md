@@ -26,6 +26,7 @@
  	* Retrofit源码分析
  	* Glide源码分析
  	* EventBus源码分析
+ 	* RxJava
 
 ---
  
@@ -126,9 +127,9 @@
  
  ---
  
- 有任何问题欢迎联系：
+有任何问题欢迎联系：
  
- geniusvjr@gmail.com
+geniusvjr@gmail.com
 
- 拒绝任何形式的商业用途。
+拒绝任何形式的商业用途。
   
