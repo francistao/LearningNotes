@@ -24,7 +24,7 @@
  	
  ---
  
- * [DesignPattern(设计模式)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/DesignPattern)
+* [DesignPattern(设计模式)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/DesignPattern)
  
  
  	* [常见的面向对象设计原则](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/常见的面向对象设计原则.md)
@@ -38,9 +38,9 @@
  
 ##第二部分
  
- * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
- * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
- * [JavaConcurrent(Java并发)]()
+* [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
+* [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
+* [JavaConcurrent(Java并发)]()
  
  ---
  
@@ -72,7 +72,7 @@
  	* [《Android开发艺术探索》第十五章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第十五章笔记.md)
  	
  	
-  * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
+* [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
  	* [实际开发中用到的框架和设计模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/实际开发中用到的框架和设计模式.md) 
  	* [项目难点](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/项目.md)
  	* [密码助手开发笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/密码助手开发笔记.md)
@@ -89,7 +89,8 @@
  	* [美团]()
  	* [豆瓣]()
  	* [蜻蜓FM]()
- ---
+
+---
  	
  * [Resume(简历)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6)
  	* [陶程简历](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/陶程-本科-Android.md)
