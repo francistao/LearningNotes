@@ -1,0 +1,324 @@
+#Android：
+---
+**五种布局： FrameLayout 、 LinearLayout 、 AbsoluteLayout 、 RelativeLayout 、 TableLayout 各自特点及绘制效率对比。**
+
+* FrameLayout(框架布局)
+
+	只可以有一个控件，并且不能设计这个控件的位置，控件会放在左上角
+
+* LinearLayout(线性布局)
+
+	一行只控制一个控件的线性布局，所以当有很多控件需要在一个界面中列出时，可以用LinearLayout布局
+
+* AbsoluteLayout(绝对布局)
+
+	可以放置多个控件，并且可以自己定义控件的x,y位置
+
+* RelativeLayout(相对布局)
+
+	比如要在一行上显示多个控件，这时就要用到相对布局
+
+* TableLayout(表格布局)
+
+	将子元素的位置分配到行或列中，一个TableLayout由许多的TableRow组成
+---
+
+
+**Activity生命周期。**
+
+
+**Acitivty的四种启动模式与特点。**
+
+任务栈是一种后进先出的结构,当按下back按钮的时候,栈内的Activity会一个一个的出栈,如果栈内没有Activity,那么系统就会回收这个栈,每个APP默认只有一个栈,以APP的包名来命名.
+
+* standard : 标准模式,每次启动Activity都会创建一个新的Activity实例,而不管这个Activity是否已经存在.Activity的启动三回调都会执行.
+* singleTop : 栈顶复用模式.这种模式下,如果新Activity已经位于任务栈的栈顶,那么此Activity不会被重新创建,所以它的启动三回调就不会执行,同时它的onNewIntent方法会被回调.如果Activity已经存在但是不在栈顶,那么新的Activity仍然会重新创建.
+* singleTask: 栈内复用模式.创建这样的Activity的时候,系统会先确认它所需任务栈已经创建,否则先创建任务栈.然后放入Activity,如果栈中已经有一个Activity实例,那么这个Activity就会被调到栈顶,并运行onNewIntent,并且singleTask会清理在当前Activity上面的所有Activity.(clear top)
+* singleInstance : 加强版的singleTask模式,这种模式的Activity只能单独位于一个任务栈内,由于栈内复用的特性,后续请求均不会创建新的Activity,除非这个独特的任务栈被系统销毁了
+
+Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放在一个List里面.可以认为一个ActivityRecord就是一个Activity栈
+
+---
+
+**Activity缓存方法。**
+
+有a、b两个Activity，当从a进入b之后一段时间，可能系统会把a回收，这时候按back，执行的不是a的onRestart而是onCreate方法，a被重新创建一次，这是a中的临时数据和状态可能就丢失了。
+可以用Activity中的onSaveInstanceState()回调方法保存临时数据和状态，这个方法一定会在活动被回收之前调用。
+方法中有一个Bundle参数，putString()、putInt()等方法需要传入两个参数，一个键一个值。
+数据保存之后会在onCreate中恢复，onCreate也有一个Bundle类型的参数
+
+一、onSaveInstanceState (Bundle outState)
+ 
+先看Application Fundamentals上的一段话：
+ Android calls onSaveInstanceState() before the activity becomes vulnerable to being destroyed by the system, but does not bother calling it when the instance is actually being destroyed by a user action (such as pressing the BACK key)
+ 
+从这句话可以知道，当某个activity变得“容易”被系统销毁时，该activity的onSaveInstanceState就会被执行，除非该activity是被用户主动销毁的，例如当用户按BACK键的时候。
+注意上面的双引号，何为“容易”？言下之意就是该activity还没有被销毁，而仅仅是一种可能性。这种可能性有哪些？通过重写一个activity的所有生命周期的onXXX方法，包括onSaveInstanceState和onRestoreInstanceState方法，我们可以清楚地知道当某个activity（假定为activity A）显示在当前task的最上层时，其onSaveInstanceState方法会在什么时候被执行，有这么几种情况：
+
+1、当用户按下HOME键时。
+这是显而易见的，系统不知道你按下HOME后要运行多少其他的程序，自然也不知道activity A是否会被销毁，故系统会调用onSaveInstanceState，让用户有机会保存某些非永久性的数据。以下几种情况的分析都遵循该原则
+
+2、长按HOME键，选择运行其他的程序时。
+
+3、按下电源按键（关闭屏幕显示）时。
+
+4、从activity A中启动一个新的activity时。
+
+5、屏幕方向切换时，例如从竖屏切换到横屏时。（如果不指定configchange属性）
+在屏幕切换之前，系统会销毁activity A，在屏幕切换之后系统又会自动地创建activity A，所以onSaveInstanceState一定会被执行
+ 
+总而言之，onSaveInstanceState的调用遵循一个重要原则，即当系统“未经你许可”时销毁了你的activity，则onSaveInstanceState会被系统调用，这是系统的责任，因为它必须要提供一个机会让你保存你的数据（当然你不保存那就随便你了）。另外，需要注意的几点：
+ 
+1.布局中的每一个View默认实现了onSaveInstanceState()方法，这样的话，这个UI的任何改变都会自动的存储和在activity重新创建的时候自动的恢复。但是这种情况只有在你为这个UI提供了唯一的ID之后才起作用，如果没有提供ID，将不会存储它的状态。
+ 
+2.由于默认的onSaveInstanceState()方法的实现帮助UI存储它的状态，所以如果你需要覆盖这个方法去存储额外的状态信息时，你应该在执行任何代码之前都调用父类的onSaveInstanceState()方法（super.onSaveInstanceState()）。
+既然有现成的可用，那么我们到底还要不要自己实现onSaveInstanceState()?这得看情况了，如果你自己的派生类中有变量影响到UI，或你程序的行为，当然就要把这个变量也保存了，那么就需要自己实现，否则就不需要。
+3.由于onSaveInstanceState()方法调用的不确定性，你应该只使用这个方法去记录activity的瞬间状态（UI的状态）。不应该用这个方法去存储持久化数据。当用户离开这个activity的时候应该在onPause()方法中存储持久化数据（例如应该被存储到数据库中的数据）。
+ 
+4.onSaveInstanceState()如果被调用，这个方法会在onStop()前被触发，但系统并不保证是否在onPause()之前或者之后触发。
+ 
+ 
+二、onRestoreInstanceState (Bundle outState)
+
+至于onRestoreInstanceState方法，需要注意的是，onSaveInstanceState方法和onRestoreInstanceState方法“不一定”是成对的被调用的，（本人注：我昨晚调试时就发现原来不一定成对被调用的！）
+ 
+onRestoreInstanceState被调用的前提是，activity A“确实”被系统销毁了，而如果仅仅是停留在有这种可能性的情况下，则该方法不会被调用，例如，当正在显示activity A的时候，用户按下HOME键回到主界面，然后用户紧接着又返回到activity A，这种情况下activity A一般不会因为内存的原因被系统销毁，故activity A的onRestoreInstanceState方法不会被执行
+
+另外，onRestoreInstanceState的bundle参数也会传递到onCreate方法中，你也可以选择在onCreate方法中做数据还原。
+还有onRestoreInstanceState在onstart之后执行。
+至于这两个函数的使用，给出示范代码（留意自定义代码在调用super的前或后）：
+@Override
+public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putBoolean("MyBoolean", true);
+        savedInstanceState.putDouble("myDouble", 1.9);
+        savedInstanceState.putInt("MyInt", 1);
+        savedInstanceState.putString("MyString", "Welcome back to Android");
+        // etc.
+        super.onSaveInstanceState(savedInstanceState);
+}
+
+@Override
+public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        boolean myBoolean = savedInstanceState.getBoolean("MyBoolean");
+        double myDouble = savedInstanceState.getDouble("myDouble");
+        int myInt = savedInstanceState.getInt("MyInt");
+        String myString = savedInstanceState.getString("MyString");
+}
+
+---
+
+
+
+
+**11.Fragment的生命周期和activity如何的一个关系**
+
+
+
+**为什么在Service中创建子线程而不是Activity中**
+
+这是因为Activity很难对Thread进行控制，当Activity被销毁之后，就没有任何其它的办法可以再重新获取到之前创建的子线程的实例。而且在一个Activity中创建的子线程，另一个Activity无法对其进行操作。但是Service就不同了，所有的Activity都可以与Service进行关联，然后可以很方便地操作其中的方法，即使Activity被销毁了，之后只要重新与Service建立关联，就又能够获取到原有的Service中Binder的实例。因此，使用Service来处理后台任务，Activity就可以放心地finish，完全不需要担心无法对后台任务进行控制的情况。
+
+
+**16.Intent的使用方法，可以传递哪些数据类型。**
+
+
+
+**Fragment生命周期**
+
+**Service的两种启动方法，有什么区别**
+
+**广播的两种动态注册和静态注册有什么区别。**
+
+**ContentProvider使用方法**
+
+
+
+**目前能否保证service不被杀死**
+
+
+**动画有哪两类，各有什么特点？三种动画的区别**
+
+---
+
+**Android的数据存储形式。**
+
+* SharedPrefrences方式
+	用来存储"key-value"格式的数据，它是一个轻量级的键值存储机制，
+	
+---
+
+**Sqlite的基本操作。**
+
+---
+
+
+
+**18.Merge、ViewStub的作用。**
+
+
+**如何判断应用被强杀**
+
+在Applicatio中定义一个static常量，赋值为－1，在欢迎界面改为0，如果被强杀，application重新初始化，在父类Activity判断该常量的值。
+
+**应用被强杀如何解决**
+
+如果在每一个Activity的onCreate里判断是否被强杀，冗余了，封装到Activity的父类中，如果被强杀，跳转回主界面，如果没有被强杀，执行Activity的初始化操作，给主界面传递intent参数，主界面会调用onNewIntent方法，在onNewIntent跳转到欢迎页面，重新来一遍流程。
+
+**19.Json有什么优劣势。**
+
+**20.怎样退出终止App**
+
+**21.Asset目录与res目录的区别。**
+
+**22.Android怎么加速启动Activity。**
+
+**23.Android内存优化方法：ListView优化，及时关闭资源，图片缓存等等。**
+
+**24.Android中弱引用与软引用的应用场景。**
+
+**25.Bitmap的四种属性，与每种属性队形的大小。**
+
+
+**26.View与View Group分类。自定义View过程：onMeasure()、onLayout()、onDraw()。**
+
+如何自定义控件：
+
+1. 自定义属性的声明和获取
+
+	* 分析需要的自定义属性
+	* 在res/values/attrs.xml定义声明
+	* 在layout文件中进行使用
+	* 在View的构造方法中进行获取		
+2. 测量onMeasure
+3. 布局onLayout(ViewGroup)
+4. 绘制onDraw
+5. onTouchEvent
+6. onInterceptTouchEvent(ViewGroup)
+7. 状态的恢复与保存
+
+
+
+
+
+**Android长连接，怎么处理心跳机制。**
+
+
+**View树绘制流程**
+
+---
+
+**下拉刷新实现原理**
+
+**你用过什么框架，是否看过源码，是否知道底层原理。**
+
+Retrofit
+
+EventBus
+
+glide
+
+
+
+**Android5.0、6.0新特性。**
+
+Android5.0新特性：
+
+* MaterialDesign设计风格
+* 支持多种设备
+* 支持64位ART虚拟机
+
+Android6.0新特性
+
+* 大量漂亮流畅的动画
+* 支持快速充电的切换
+* 支持文件夹拖拽应用
+* 相机新增专业模式
+
+Android7.0新特性
+
+* 分屏多任务
+* 增强的Java8语言模式
+* 夜间模式
+
+**Context区别**
+
+* Activity和Service以及Application的Context是不一样的,Activity继承自ContextThemeWraper.其他的继承自ContextWrapper
+* 每一个Activity和Service以及Application的Context都是一个新的ContextImpl对象
+* getApplication()用来获取Application实例的，但是这个方法只有在Activity和Service中才能调用的到。那么也许在绝大多数情况下我们都是在Activity或者Service中使用Application的，但是如果在一些其它的场景，比如BroadcastReceiver中也想获得Application的实例，这时就可以借助getApplicationContext()方法，getApplicationContext()比getApplication()方法的作用域会更广一些，任何一个Context的实例，只要调用getApplicationContext()方法都可以拿到我们的Application对象。
+* Activity在创建的时候会new一个ContextImpl对象并在attach方法中关联它，Application和Service也差不多。ContextWrapper的方法内部都是转调ContextImpl的方法
+* 创建对话框传入Application的Context是不可以的
+* 尽管Application、Activity、Service都有自己的ContextImpl，并且每个ContextImpl都有自己的mResources成员，但是由于它们的mResources成员都来自于唯一的ResourcesManager实例，所以它们看似不同的mResources其实都指向的是同一块内存
+* Context的数量等于Activity的个数 + Service的个数 + 1，这个1为Application
+
+
+**32.IntentService的使用场景与特点。**
+
+>IntentService是Service的子类，是一个异步的，会自动停止的服务，很好解决了传统的Service中处理完耗时操作忘记停止并销毁Service的问题
+
+优点：
+
+* 一方面不需要自己去new Thread
+* 另一方面不需要考虑在什么时候关闭该Service
+
+onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息到该handler的handleMessage中去。最后handleMessage中回调onHandleIntent(intent)。
+
+**ANR问题**
+
+[ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
+
+
+
+**Handler机制**
+
+**AsyncTask相关问题，3.0前后的bug，如何实现并发？底层实现原理？**
+
+**Android的三级缓存如何实现**
+
+**图片缓存**
+
+查看每个应用程序最高可用内存：
+
+```
+    int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);  
+    Log.d("TAG", "Max memory is " + maxMemory + "KB");  
+```
+**AIDL**
+
+**Binder和IPC机制**
+
+**触摸事件分发机制**
+
+**Activity启动流程以及界面展示过程**
+
+**Android系统启动流程**
+
+**Zygote的启动过程。**
+
+**Android中的MVC，MVP和MVVM**
+
+**涉及动态加载技术点相关**
+
+**Android内存泄漏**
+
+[Android内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
+
+**Android中的性能优化**
+
+[http://blog.csdn.net/codeemperor/article/details/51480671](http://blog.csdn.net/codeemperor/article/details/51480671)
+
+**Gradle**
+
+构建工具、Groovy语法、Java
+
+Jar包里面只有代码，aar里面不光有代码还包括
+
+**你是如何自学Android**
+
+首先是看书和看视频敲代码，然后看大牛的博客，做一些项目，向github提交代码，觉得自己API掌握的不错之后，开始看进阶的书，以及看源码，看完源码学习到一些思想，开始自己造轮子，开始想代码的提升，比如设计模式，架构，重构等。
+
+
+
+
+

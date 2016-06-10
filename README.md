@@ -8,37 +8,68 @@
 	* Android基础知识
  	* [Android内存泄漏总结](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
  	* [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
- 	* [Android系统机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android系统机制.md)
+  	* [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
  	* [AsyncTask源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Asynctask源码分析.md)
- 	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
- 	* [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
- 	* [开源项目源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/开源框架源码分析.md)
  	* [插件化技术](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/插件化技术学习.md)
  	* [自定义控件](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/自定义控件.md)
  	* [事件分发机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/事件分发机制.md)
  	* [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
  	* [Art和Dalvik的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Art和Dalvik区别.md)
  	* APP启动过程
- 	* Activity启动过程
- 	* 图片缓存
- 	
- ---
+ 	* Activity启动流程以及界面展示过程
+ 	* 图片三级缓存
+ 	* AIDL
+ 	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
+ 	* Zygote的启动过程
+ 	* Android中的MVC，MVP和MVVM
+ 	* Android系统启动流程
+ 	* Retrofit源码分析
+ 	* Glide源码分析
+ 	* EventBus源码分析
+
+---
  
 * [DesignPattern(设计模式)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/DesignPattern)
  
  
- 	* [常见的面向对象设计原则](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/常见的面向对象设计原则.md)
+ 	* [面向对象六大原则](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/常见的面向对象设计原则.md)
  	* [单例模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/单例模式.md)
- 	* [外观模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/外观模式.md)
+ 	* Builder模式
+ 	* 原型模式
  	* [简单工厂](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/简单工厂.md)
- 	* [观察者模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/观察者模式.md)
+ 	* 工厂方法模式
+ 	* 抽象工厂模式
+ 	* 策略模式
+ 	* 状态模式
+ 	* 责任链模式
+ 	* 解释器模式
+ 	* 命令模式
+	* [观察者模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/观察者模式.md)
+ 	* 备忘录模式
+ 	* 迭代器模式
+ 	* 模板方法模式
+ 	* 访问者模式
+ 	* 中介者模式
+ 	* 代理模式
+ 	* 组合模式
  	* [适配器模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/适配器模式.md)
+ 	* 装饰模式
+ 	* 享元模式
+ 	* [外观模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/外观模式.md)
+ 	* 桥接模式
+
+ 	
+
  
  ---
  
 ##第二部分
  
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
 * [JavaConcurrent(Java并发)]()
  
@@ -49,6 +80,8 @@
  
  * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
  * [Algorithm(算法)]()
+ 	* 《剑指Offer》
+ 	* 《程序员面试金典》
  
  ---
 
