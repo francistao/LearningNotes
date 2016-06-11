@@ -20,7 +20,7 @@
  	* [SurfaceView](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/SurfaceView.md)
  	* APP启动过程
  	* Activity启动流程以及界面展示过程
- 	* 图片三级缓存
+ 	* [图片三级缓存](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android图片中的三级缓存.md)
  	* 热修复的原理
  	* AIDL
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
@@ -30,7 +30,7 @@
  	* Retrofit源码分析
  	* Glide源码分析
  	* EventBus源码分析
- 	* RxJava
+ 	* [RxJava](http://gank.io/post/560e15be2dca930e00da1083)
  	* 设计一套图片异步加载缓存方案
  	* Android UI适配
 
@@ -91,7 +91,7 @@
 ##第三部分
  
  * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
- 	* 数组
+ 	* [数组](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/数组.md)
  	* 链表
  	* 栈和队列
  	* 字符串
