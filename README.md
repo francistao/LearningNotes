@@ -48,7 +48,7 @@
  	* 抽象工厂模式
  	* [策略模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/策略模式.md)
  	* 状态模式
- 	* 责任链模式
+ 	* [责任链模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/责任链模式.md)
  	* 解释器模式
  	* 命令模式
 	* [观察者模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/观察者模式.md)
@@ -80,7 +80,7 @@
 	* [JVM基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM.md)
 	* [JVM类加载机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM类加载机制.md)
 	* [Java内存区域与内存溢出](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/Java内存区域与内存溢出.md)
-	* 垃圾回收算法 
+	* [垃圾回收算法](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/垃圾回收算法.md)
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
 	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
