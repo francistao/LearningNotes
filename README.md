@@ -84,7 +84,7 @@
 	* [Java内存区域与内存溢出](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/Java内存区域与内存溢出.md)
 	* [垃圾回收算法](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/垃圾回收算法.md)
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
-	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
+	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发基础知识.md)
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
 	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
@@ -106,6 +106,7 @@
  	* 《剑指Offer》
  		* [实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
  	* 《程序员面试金典》
+ 	* 《LeetCode》
  
  ---
 
@@ -139,7 +140,11 @@
   
 ##第六部分
  
- * [InterviewExperience(面试经验)]()
+ * [InterviewExperience(面试经验)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6/InterviewExperience)
+ 	* [Alibaba](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/Alibaba.md)
+ 	* [美团](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/美团.md)
+ 	* [豌豆荚](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/豌豆荚.md)
+ 	* [蜻蜓FM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/蜻蜓FM.md)
 
 
 ---
