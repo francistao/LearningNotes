@@ -84,6 +84,7 @@
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
 	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
+	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
  
