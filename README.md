@@ -136,7 +136,6 @@
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
  	* [实际开发中用到的框架和设计模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/实际开发中用到的框架和设计模式.md) 
  	* [项目难点](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/项目.md)
- 	* [密码助手开发笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/密码助手开发笔记.md)
   
 ##第六部分
  
