@@ -84,7 +84,7 @@ sleep()方法是线程类（Thread）的静态方法，导致此线程暂停执�
 
 **IO框架主要用到什么设计模式**
 
-JDK的I/O包中就主要使用到了两种设计模式：Adatper模式和Decorator模式
+JDK的I/O包中就主要使用到了两种设计模式：Adatper模式和Decorator模式。
 
 
 **NIO包有哪些结构？分别起到的作用？**

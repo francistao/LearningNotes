@@ -101,6 +101,7 @@
  	* 排序
  	* 查找
  	* 《剑指Offer》
+ 		* [实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
  	* 《程序员面试金典》
  
  ---
