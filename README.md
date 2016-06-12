@@ -75,7 +75,8 @@
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
 	* [Java基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java基础知识.md)
 	* [Java中的内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java中的内存泄漏.md)
-	* [String源码分析]()
+	* [String源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/String源码分析.md)
+	
 	
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
 	* [JVM基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM.md)
