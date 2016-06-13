@@ -5,7 +5,7 @@
 
 * [Android(安卓)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/Android)
 
-	* [Android基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android基础知识.md)
+    * [Android基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android基础知识.md)
  	* [Android内存泄漏总结](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
  	* [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
   	* [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
@@ -98,7 +98,11 @@
  	* 树
  	* 图
  * [Algorithm(算法)]()
- 	* 排序
+ 	* [排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort)
+        * [选择排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/选择排序.md)
+        * [冒泡排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/冒泡排序.md)
+        * [快速排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/快速排序.md)
+        * [归并排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/归并排序.md)
  	* 查找
  	* 《剑指Offer》
  	* 《程序员面试金典》
