@@ -20,7 +20,7 @@
  	* [SurfaceView](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/SurfaceView.md)
  	* APP启动过程
  	* Activity启动流程以及界面展示过程
- 	* 图片三级缓存
+ 	* [图片三级缓存](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android图片中的三级缓存.md)
  	* 热修复的原理
  	* AIDL
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
@@ -30,7 +30,7 @@
  	* Retrofit源码分析
  	* Glide源码分析
  	* EventBus源码分析
- 	* RxJava
+ 	* [RxJava](http://gank.io/post/560e15be2dca930e00da1083)
  	* 设计一套图片异步加载缓存方案
  	* Android UI适配
 
@@ -75,6 +75,8 @@
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
 	* [Java基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java基础知识.md)
 	* [Java中的内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java中的内存泄漏.md)
+	* [String源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/String源码分析.md)
+	
 	
 * [JVM(Java虚拟机)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JVM)
 	* [JVM基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/JVM.md)
@@ -82,8 +84,9 @@
 	* [Java内存区域与内存溢出](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/Java内存区域与内存溢出.md)
 	* [垃圾回收算法](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/垃圾回收算法.md)
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
-	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
+	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发基础知识.md)
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
+	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
  
@@ -91,7 +94,7 @@
 ##第三部分
  
  * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
- 	* 数组
+ 	* [数组](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/数组.md)
  	* 链表
  	* 栈和队列
  	* 字符串
@@ -105,7 +108,9 @@
         * [归并排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/归并排序.md)
  	* 查找
  	* 《剑指Offer》
+ 		* [实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
  	* 《程序员面试金典》
+ 	* 《LeetCode》
  
  ---
 
@@ -136,11 +141,14 @@
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
  	* [实际开发中用到的框架和设计模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/实际开发中用到的框架和设计模式.md) 
  	* [项目难点](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/项目.md)
- 	* [密码助手开发笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/密码助手开发笔记.md)
   
 ##第六部分
  
- * [InterviewExperience(面试经验)]()
+ * [InterviewExperience(面试经验)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6/InterviewExperience)
+ 	* [Alibaba](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/Alibaba.md)
+ 	* [美团](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/美团.md)
+ 	* [豌豆荚](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/豌豆荚.md)
+ 	* [蜻蜓FM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/蜻蜓FM.md)
 
 
 ---
