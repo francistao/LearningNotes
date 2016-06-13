@@ -147,6 +147,7 @@
  	
  * [Resume(简历)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6)
  	* [陶程简历](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/陶程-本科-Android.md)
+ 	* [梁观全的简历]()
  
 ---
  
