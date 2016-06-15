@@ -137,6 +137,7 @@
  	* [《Android开发艺术探索》第十五章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第十五章笔记.md)
  	* [《深入理解Java虚拟机》第12章](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《深入理解java虚拟机》第12章.md)
  	* [《Java编程思想》第一章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Java编程思想》第一章读书笔记.md)
+ 	* [《Java编程思想》第二章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Java编程思想》第二章读书笔记.md)
  	
  	
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
