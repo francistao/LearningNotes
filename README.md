@@ -120,7 +120,7 @@
  	* [TCP/UDP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/TCP与UDP.md)
  	* [HTTP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/Http协议.md)
  	* [Socket](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/Socket.md)
- * [OperatingSystem(操作系统)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/OperatingSystem)
+ * [OperatingSystem(操作系统)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/OperatingSystem/操作系统.md)
  
 ---
 
@@ -136,6 +136,7 @@
  	* [《Android开发艺术探索》第八章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第八章笔记.md)
  	* [《Android开发艺术探索》第十五章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第十五章笔记.md)
  	* [《深入理解Java虚拟机》第12章](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《深入理解java虚拟机》第12章.md)
+ 	* [《Java编程思想》第一章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Java编程思想》第一章读书笔记.md)
  	
  	
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
