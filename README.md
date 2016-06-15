@@ -130,6 +130,7 @@
  * [ReadingNotes(读书笔记)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/ReadingNotes)
  	* [《APP研发录》第1章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《APP研发录》第1章读书笔记.md)
  	* [《APP研发录》第2章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《APP研发录》第2章读书笔记.md)
+ 	* [《Android开发艺术探索》第一章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第一章笔记.md)
  	* [《Android开发艺术探索》第二章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第二章笔记.md)
  	* [《Android开发艺术探索》第三章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第三章笔记.md)
  	* [《Android开发艺术探索》第四章笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《Android开发艺术探索》第四章笔记.md)
