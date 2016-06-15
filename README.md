@@ -96,7 +96,7 @@
  * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
  	* [数组](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/数组.md)
  	* 链表
- 	* 栈和队列
+ 	* [栈和队列](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/栈和队列.md)
  	* 字符串
  	* 树
  	* 图
