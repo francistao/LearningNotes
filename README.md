@@ -85,7 +85,8 @@
 	* [垃圾回收算法](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JVM/垃圾回收算法.md)
 * [JavaConcurrent(Java并发)](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发.md)
 	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发基础知识.md)
-	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)	 
+	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)
+	* [Thread和Runnable实现多线程的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Thread和Runnable实现多线程的区别.md)	 
 	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
@@ -108,7 +109,8 @@
         * [归并排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/归并排序.md)
  	* 查找
  	* 《剑指Offer》
- 		* [实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
+ 		* [面试题2:实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
+ 		* [面试题44:扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
  	* 《程序员面试金典》
  	* 《LeetCode》
  
