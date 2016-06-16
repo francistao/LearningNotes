@@ -87,6 +87,7 @@
 	* [Java并发基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Java并发基础知识.md)
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)
 	* [Thread和Runnable实现多线程的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Thread和Runnable实现多线程的区别.md)	 
+	* [线程中断](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/线程中断.md)
 	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
