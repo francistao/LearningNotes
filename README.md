@@ -88,6 +88,7 @@
 	* [生产者和消费者问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/生产者和消费者问题.md)
 	* [Thread和Runnable实现多线程的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Thread和Runnable实现多线程的区别.md)	 
 	* [线程中断](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/线程中断.md)
+	* [守护线程与阻塞线程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/守护线程与阻塞线程.md)
 	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
@@ -114,6 +115,7 @@
  		* [面试题44:扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
  	* 《程序员面试金典》
  	* 《LeetCode》
+ 		* [two-sum](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/LeetCode/two-sum.md)
  
  ---
 
