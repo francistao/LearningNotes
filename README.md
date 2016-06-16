@@ -24,7 +24,7 @@
  	* [热修复的原理](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/热修复技术.md)
  	* [AIDL](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/AIDL.md)
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
- 	* Zygote的启动过程
+ 	* [Zygote和System进程的启动过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Zygote和System进程的启动过程.md)
  	* [Android中的MVC，MVP和MVVM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVC%2CMVP%2CMVVM的区别.md)
  	* Android系统启动流程
  	* Retrofit源码分析
