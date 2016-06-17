@@ -58,7 +58,7 @@
  	* 模板方法模式
  	* 访问者模式
  	* 中介者模式
- 	* 代理模式
+ 	* [代理模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/代理模式.md)
  	* 组合模式
  	* [适配器模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/适配器模式.md)
  	* 装饰模式
