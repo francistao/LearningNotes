@@ -95,6 +95,7 @@
 	* [实现内存可见的两种方法比较：加锁和volatile变量](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/实现内存可见的两种方法比较：加锁和volatile变量.md)
 	* [死锁](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/死锁.md)
 	* [可重入内置锁](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/可重入内置锁.md)
+	* [使用wait/notify/notifyAll实现线程间通信](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/使用wait:notify:notifyall实现线程间通信.md)
 	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
