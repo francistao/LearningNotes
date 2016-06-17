@@ -26,6 +26,7 @@
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
  	* [Zygote和System进程的启动过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Zygote和System进程的启动过程.md)
  	* [Android中的MVC，MVP和MVVM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVC%2CMVP%2CMVVM的区别.md)
+ 	* [MVP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVP.md)
  	* Android系统启动流程
  	* Retrofit源码分析
  	* Glide源码分析
@@ -89,6 +90,9 @@
 	* [Thread和Runnable实现多线程的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Thread和Runnable实现多线程的区别.md)	 
 	* [线程中断](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/线程中断.md)
 	* [守护线程与阻塞线程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/守护线程与阻塞线程.md)
+	* [synchronized](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/Synchronized.md)
+	* [多线程环境中安全使用集合API](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/多线程环境中安全使用集合API.md)
+	* [实现内存可见的两种方法比较：加锁和volatile变量](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/实现内存可见的两种方法比较：加锁和volatile变量.md)
 	* [NIO](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaConcurrent/NIO.md)
  
  ---
