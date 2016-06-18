@@ -167,6 +167,7 @@
  	* [美团](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/美团.md)
  	* [豌豆荚](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/豌豆荚.md)
  	* [蜻蜓FM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/蜻蜓FM.md)
+ 	* [新浪微博](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/新浪微博.md)
 
 
 ---
