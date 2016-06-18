@@ -126,6 +126,8 @@
         * [快速排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/快速排序.md)
         * [归并排序](https://github.com/anAngryAnt/LearningNotes/tree/master/Part3/Algorithm/Sort/归并排序.md)
  	* 查找
+ 		* [顺序查找](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/Lookup/顺序查找.md)
+ 		* [折半查找](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/Lookup/折半查找.md)
  	* 《剑指Offer》
  		* [面试题2:实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
  		* [面试题44:扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
