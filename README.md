@@ -18,6 +18,7 @@
  	* [Android关于OOM的解决方案](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android关于oom的解决方案.md)
  	* [Fragment](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Fragment.md)
  	* [SurfaceView](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/SurfaceView.md)
+ 	* [Android几种进程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android几种进程.md)
  	* APP启动过程
  	* Activity启动流程以及界面展示过程
  	* [图片三级缓存](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android图片中的三级缓存.md)
