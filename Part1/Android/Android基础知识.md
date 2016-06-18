@@ -28,10 +28,26 @@
 * TableLayout(表格布局)
 
     将子元素的位置分配到行或列中，一个TableLayout由许多的TableRow组成
+    
+
 ---
 
 
 **Activity生命周期。**
+
+* 启动Activity:
+  onCreate()—>onStart()—>onResume()，Activity进入运行状态。
+* Activity退居后台:
+  当前Activity转到新的Activity界面或按Home键回到主屏：
+  onPause()—>onStop()，进入停滞状态。
+* Activity返回前台:
+  onRestart()—>**onStart()**—>onResume()，再次回到运行状态。
+* Activity退居后台，且系统内存不足，
+  系统会杀死这个后台状态的Activity，若再次回到这个Activity,则会走onCreate()–>onStart()—>onResume()
+* 锁定屏与解锁屏幕
+  **只会调用onPause()，而不会调用onStop()方法，开屏后则调用onResume()**
+  
+---
 
 
 **Acitivty的四种启动模式与特点。**
@@ -134,16 +150,60 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 
 **Fragment生命周期**
 
+![](http://7xntdm.com1.z0.glb.clouddn.com/fragment_lifecycle.png)
+
+注意和Activity的相比的区别,按照执行顺序
+
+* onAttach(),onDetach()
+* onCreateView(),onDestroyView()
+
+---
+
 **Service的两种启动方法，有什么区别**
 
 **广播的两种动态注册和静态注册有什么区别。**
 
+* 静态注册：在AndroidManifest.xml文件中进行注册，当App退出后，Receiver仍然可以接收到广播并且进行相应的处理
+* 动态注册：在代码中动态注册，当App退出后，也就没办法再接受广播了
+
+---
+
+
 **ContentProvider使用方法**
 
-
+---
 
 **目前能否保证service不被杀死**
 
+**Service设置成START_STICKY**
+
+* kill 后会被重启（等待5秒左右），重传Intent，保持与重启前一样
+
+**提升service优先级**
+ * 在AndroidManifest.xml文件中对于intent-filter可以通过android:priority = "1000"这个属性设置最高优先级，1000是最高值，如果数字越小则优先级越低，同时适用于广播。
+ * 【结论】目前看来，priority这个属性貌似只适用于broadcast，对于Service来说可能无效
+
+**提升service进程优先级**
+ * Android中的进程是托管的，当系统进程空间紧张的时候，会依照优先级自动进行进程的回收
+ * 当service运行在低内存的环境时，将会kill掉一些存在的进程。因此进程的优先级将会很重要，可以在startForeground()使用startForeground()将service放到前台状态。这样在低内存时被kill的几率会低一些。
+ * 【结论】如果在极度极度低内存的压力下，该service还是会被kill掉，并且不一定会restart()
+
+**onDestroy方法里重启service**
+ * service +broadcast  方式，就是当service走ondestory()的时候，发送一个自定义的广播，当收到广播的时候，重新启动service
+ * 也可以直接在onDestroy()里startService
+ * 【结论】当使用类似口口管家等第三方应用或是在setting里-应用-强制停止时，APP进程可能就直接被干掉了，onDestroy方法都进不来，所以还是无法保证
+
+**监听系统广播判断Service状态**
+ * 通过系统的一些广播，比如：手机重启、界面唤醒、应用状态改变等等监听并捕获到，然后判断我们的Service是否还存活，别忘记加权限
+ * 【结论】这也能算是一种措施，不过感觉监听多了会导致Service很混乱，带来诸多不便
+
+**在JNI层,用C代码fork一个进程出来**
+
+* 这样产生的进程,会被系统认为是两个不同的进程.但是Android5.0之后可能不行
+
+**root之后放到system/app变成系统级应用**
+
+**大招: 放一个像素在前台(手机QQ)**
 
 ---
 
@@ -282,13 +342,13 @@ Android7.0新特性
 
 onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息到该handler的handleMessage中去。最后handleMessage中回调onHandleIntent(intent)。
 
-**ANR问题**
 
 [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
 
 
 
 **Handler机制**
+
 
 **AsyncTask相关问题，3.0前后的bug，如何实现并发？底层实现原理？**
 
@@ -318,13 +378,15 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
 
 **涉及动态加载技术点相关**
 
-**Android内存泄漏**
+---
 
 [Android内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
 
-**Android中的性能优化**
+****
 
-[http://blog.csdn.net/codeemperor/article/details/51480671](http://blog.csdn.net/codeemperor/article/details/51480671)
+[Android中的性能优化](http://blog.csdn.net/codeemperor/article/details/51480671)
+
+---
 
 **Gradle**
 
@@ -332,11 +394,13 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
 
 Jar包里面只有代码，aar里面不光有代码还包括
 
+---
+
 **你是如何自学Android**
 
 首先是看书和看视频敲代码，然后看大牛的博客，做一些项目，向github提交代码，觉得自己API掌握的不错之后，开始看进阶的书，以及看源码，看完源码学习到一些思想，开始自己造轮子，开始想代码的提升，比如设计模式，架构，重构等。
 
-
+---
 
 
 
