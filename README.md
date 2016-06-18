@@ -130,6 +130,7 @@
  		* [折半查找](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/Lookup/折半查找.md)
  	* 《剑指Offer》
  		* [面试题2:实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
+ 		* [面试题6：重建二叉树](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题6：重建二叉树.md)
  		* [面试题44:扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
  	* 《程序员面试金典》
  	* 《LeetCode》
@@ -177,6 +178,7 @@
  	* [豌豆荚](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/豌豆荚.md)
  	* [蜻蜓FM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/蜻蜓FM.md)
  	* [新浪微博](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/新浪微博.md)
+ 	* [网易杭研](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/网易杭研.md)
 
 
 ---
