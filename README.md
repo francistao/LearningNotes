@@ -34,6 +34,7 @@
  	* Glide源码分析
  	* [EventBus用法详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/EventBus用法详解.md)
  	* EventBus源码分析
+ 	* [Android ORM 框架之 greenDAO 使用心得](http://www.open-open.com/lib/view/open1438065400878.html)
  	* [RxJava](http://gank.io/post/560e15be2dca930e00da1083)
  	* 设计一套图片异步加载缓存方案
  	* Android UI适配
