@@ -32,6 +32,7 @@
  	* [Android开机过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android开机过程.md)
  	* Retrofit源码分析
  	* Glide源码分析
+ 	* [EventBus用法详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/EventBus用法详解.md)
  	* EventBus源码分析
  	* [RxJava](http://gank.io/post/560e15be2dca930e00da1083)
  	* 设计一套图片异步加载缓存方案
