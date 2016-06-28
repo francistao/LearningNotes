@@ -8,9 +8,11 @@
 
 * LinearLayout(线性布局)
 
-    一行只控制一个控件的线性布局，所以当有很多控件需要在一个界面中列出时，可以用LinearLayout布局
-    此布局有一个需要格外注意的属性:``android:orientation=“horizontal|vertical”``.
-    * android:orientation="horizontal"，
+    一行只控制一个控件的线性布局，所以当有很多控件需要在一个界面中列出时，可以用LinearLayout布局。
+    此布局有一个需要格外注意的属性:``android:orientation=“horizontal|vertical``。
+    
+    * 当`android:orientation="horizontal`时，*说明你希望将水平方向的布局交给**LinearLayout** *，其子元素的`android:layout_gravity="right|left"` 等控制水平方向的gravity值都是被忽略的，*此时**LinearLayout**中的子元素都是默认的按照水平从左向右来排*，我们可以用`android:layout_gravity="top|bottom"`等gravity值来控制垂直展示。
+    * 反之，可以知道 当`android:orientation="vertical`时，**LinearLayout**对其子元素展示上的的处理方式。
 
 * AbsoluteLayout(绝对布局)
 
@@ -19,29 +21,52 @@
 * RelativeLayout(相对布局)
 
     这个布局也是相对自由的布局，Android 对该布局的child view的 水平layout& 垂直layout做了解析，由此我们可以FrameLayout的基础上使用标签或者Java代码对垂直方向 以及 水平方向 布局中的views任意的控制.
+    
     * 相关属性：
-        * android:layout_centerInParent="true|false"
-        * android:layout_centerHorizontal="true|false"
-        * android:layout_alignParentRight="true|false"
-        * 等等...
+    　　``android:layout_centerInParent="true|false"``
+	　　``android:layout_centerHorizontal="true|false"``
+	　　``android:layout_alignParentRight="true|false"``
+	...
 
 * TableLayout(表格布局)
 
     将子元素的位置分配到行或列中，一个TableLayout由许多的TableRow组成
+    
+
 ---
 
 
 **Activity生命周期。**
 
+* 启动Activity:
+  onCreate()—>onStart()—>onResume()，Activity进入运行状态。
+* Activity退居后台:
+  当前Activity转到新的Activity界面或按Home键回到主屏：
+  onPause()—>onStop()，进入停滞状态。
+* Activity返回前台:
+  onRestart()—>**onStart()**—>onResume()，再次回到运行状态。
+* Activity退居后台，且系统内存不足，
+  系统会杀死这个后台状态的Activity（此时这个Activity引用仍然处在任务栈中，只是这个时候引用指向的对象已经为null），若再次回到这个Activity,则会走onCreate()–>onStart()—>onResume()(将重新走一次Activity的初始化生命周期)
+* 锁定屏与解锁屏幕
+  **只会调用onPause()，而不会调用onStop()方法，开屏后则调用onResume()**
+  
+* 更多流程分支，请参照以下生命周期流程图
+	![](http://img.blog.csdn.net/20130828141902812)
 
-**Acitivty的四种启动模式与特点。**
 
-任务栈是一种后进先出的结构,当按下back按钮的时候,栈内的Activity会一个一个的出栈,如果栈内没有Activity,那么系统就会回收这个栈,每个APP默认只有一个栈,以APP的包名来命名.
+---
 
-* standard : 标准模式,每次启动Activity都会创建一个新的Activity实例,而不管这个Activity是否已经存在.Activity的启动三回调都会执行.
-* singleTop : 栈顶复用模式.这种模式下,如果新Activity已经位于任务栈的栈顶,那么此Activity不会被重新创建,所以它的启动三回调就不会执行,同时它的onNewIntent方法会被回调.如果Activity已经存在但是不在栈顶,那么新的Activity仍然会重新创建.
-* singleTask: 栈内复用模式.创建这样的Activity的时候,系统会先确认它所需任务栈已经创建,否则先创建任务栈.然后放入Activity,如果栈中已经有一个Activity实例,那么这个Activity就会被调到栈顶,并运行onNewIntent,并且singleTask会清理在当前Activity上面的所有Activity.(clear top)
-* singleInstance : 加强版的singleTask模式,这种模式的Activity只能单独位于一个任务栈内,由于栈内复用的特性,后续请求均不会创建新的Activity,除非这个独特的任务栈被系统销毁了
+
+**通过Acitivty的xml标签来改变任务栈的默认行为**
+
+* 使用``android:launchMode="standard|singleInstance|singleTask|singleTop"``来控制Acivity任务栈。
+
+    **任务栈**是一种后进先出的结构。位于栈顶的Activity处于焦点状态,当按下back按钮的时候,栈内的Activity会一个一个的出栈,并且调用其``onDestory()``方法。如果栈内没有Activity,那么系统就会回收这个栈,每个APP默认只有一个栈,以APP的包名来命名.
+
+    * standard : 标准模式,每次启动Activity都会创建一个新的Activity实例,并且将其压入任务栈栈顶,而不管这个Activity是否已经存在。Activity的启动三回调(*onCreate()->onStart()->onResume()*)都会执行。
+    - singleTop : 栈顶复用模式.这种模式下,如果新Activity已经位于任务栈的栈顶,那么此Activity不会被重新创建,所以它的启动三回调就不会执行,同时Activity的``onNewIntent()``方法会被回调.如果Activity已经存在但是不在栈顶,那么作用于*standard模式*一样.
+    - singleTask: 栈内复用模式.创建这样的Activity的时候,系统会先确认它所需任务栈已经创建,否则先创建任务栈.然后放入Activity,如果栈中已经有一个Activity实例,那么这个Activity就会被调到栈顶,``onNewIntent()``,并且singleTask会清理在当前Activity上面的所有Activity.(clear top)
+    - singleInstance : 加强版的singleTask模式,这种模式的Activity只能单独位于一个任务栈内,由于栈内复用的特性,后续请求均不会创建新的Activity,除非这个独特的任务栈被系统销毁了
 
 Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放在一个List里面.可以认为一个ActivityRecord就是一个Activity栈
 
@@ -53,6 +78,30 @@ Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放�
 可以用Activity中的onSaveInstanceState()回调方法保存临时数据和状态，这个方法一定会在活动被回收之前调用。
 方法中有一个Bundle参数，putString()、putInt()等方法需要传入两个参数，一个键一个值。
 数据保存之后会在onCreate中恢复，onCreate也有一个Bundle类型的参数
+
+示例代码：
+```
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //这里，当Acivity第一次被创建的时候为空
+        //所以我们需要判断一下
+        if( savedInstanceState != null ){
+            savedInstanceState.getString("anAnt");
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString("anAnt","Android");
+
+    }
+
+```
 
 一、onSaveInstanceState (Bundle outState)
  
@@ -80,6 +129,7 @@ Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放�
  
 2.由于默认的onSaveInstanceState()方法的实现帮助UI存储它的状态，所以如果你需要覆盖这个方法去存储额外的状态信息时，你应该在执行任何代码之前都调用父类的onSaveInstanceState()方法（super.onSaveInstanceState()）。
 既然有现成的可用，那么我们到底还要不要自己实现onSaveInstanceState()?这得看情况了，如果你自己的派生类中有变量影响到UI，或你程序的行为，当然就要把这个变量也保存了，那么就需要自己实现，否则就不需要。
+
 3.由于onSaveInstanceState()方法调用的不确定性，你应该只使用这个方法去记录activity的瞬间状态（UI的状态）。不应该用这个方法去存储持久化数据。当用户离开这个activity的时候应该在onPause()方法中存储持久化数据（例如应该被存储到数据库中的数据）。
  
 4.onSaveInstanceState()如果被调用，这个方法会在onStop()前被触发，但系统并不保证是否在onPause()之前或者之后触发。
@@ -94,6 +144,7 @@ onRestoreInstanceState被调用的前提是，activity A“确实”被系统销
 另外，onRestoreInstanceState的bundle参数也会传递到onCreate方法中，你也可以选择在onCreate方法中做数据还原。
 还有onRestoreInstanceState在onstart之后执行。
 至于这两个函数的使用，给出示范代码（留意自定义代码在调用super的前或后）：
+```
 @Override
 public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putBoolean("MyBoolean", true);
@@ -113,7 +164,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
         int myInt = savedInstanceState.getInt("MyInt");
         String myString = savedInstanceState.getString("MyString");
 }
-
+```
 ---
 
 
@@ -134,16 +185,60 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 
 **Fragment生命周期**
 
+![](http://7xntdm.com1.z0.glb.clouddn.com/fragment_lifecycle.png)
+
+注意和Activity的相比的区别,按照执行顺序
+
+* onAttach(),onDetach()
+* onCreateView(),onDestroyView()
+
+---
+
 **Service的两种启动方法，有什么区别**
 
 **广播的两种动态注册和静态注册有什么区别。**
 
+* 静态注册：在AndroidManifest.xml文件中进行注册，当App退出后，Receiver仍然可以接收到广播并且进行相应的处理
+* 动态注册：在代码中动态注册，当App退出后，也就没办法再接受广播了
+
+---
+
+
 **ContentProvider使用方法**
 
-
+---
 
 **目前能否保证service不被杀死**
 
+**Service设置成START_STICKY**
+
+* kill 后会被重启（等待5秒左右），重传Intent，保持与重启前一样
+
+**提升service优先级**
+ * 在AndroidManifest.xml文件中对于intent-filter可以通过android:priority = "1000"这个属性设置最高优先级，1000是最高值，如果数字越小则优先级越低，同时适用于广播。
+ * 【结论】目前看来，priority这个属性貌似只适用于broadcast，对于Service来说可能无效
+
+**提升service进程优先级**
+ * Android中的进程是托管的，当系统进程空间紧张的时候，会依照优先级自动进行进程的回收
+ * 当service运行在低内存的环境时，将会kill掉一些存在的进程。因此进程的优先级将会很重要，可以在startForeground()使用startForeground()将service放到前台状态。这样在低内存时被kill的几率会低一些。
+ * 【结论】如果在极度极度低内存的压力下，该service还是会被kill掉，并且不一定会restart()
+
+**onDestroy方法里重启service**
+ * service +broadcast  方式，就是当service走ondestory()的时候，发送一个自定义的广播，当收到广播的时候，重新启动service
+ * 也可以直接在onDestroy()里startService
+ * 【结论】当使用类似口口管家等第三方应用或是在setting里-应用-强制停止时，APP进程可能就直接被干掉了，onDestroy方法都进不来，所以还是无法保证
+
+**监听系统广播判断Service状态**
+ * 通过系统的一些广播，比如：手机重启、界面唤醒、应用状态改变等等监听并捕获到，然后判断我们的Service是否还存活，别忘记加权限
+ * 【结论】这也能算是一种措施，不过感觉监听多了会导致Service很混乱，带来诸多不便
+
+**在JNI层,用C代码fork一个进程出来**
+
+* 这样产生的进程,会被系统认为是两个不同的进程.但是Android5.0之后可能不行
+
+**root之后放到system/app变成系统级应用**
+
+**大招: 放一个像素在前台(手机QQ)**
 
 ---
 
@@ -282,13 +377,13 @@ Android7.0新特性
 
 onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息到该handler的handleMessage中去。最后handleMessage中回调onHandleIntent(intent)。
 
-**ANR问题**
 
 [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
 
 
 
 **Handler机制**
+
 
 **AsyncTask相关问题，3.0前后的bug，如何实现并发？底层实现原理？**
 
@@ -318,13 +413,15 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
 
 **涉及动态加载技术点相关**
 
-**Android内存泄漏**
+---
 
 [Android内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
 
-**Android中的性能优化**
+****
 
-[http://blog.csdn.net/codeemperor/article/details/51480671](http://blog.csdn.net/codeemperor/article/details/51480671)
+[Android中的性能优化](http://blog.csdn.net/codeemperor/article/details/51480671)
+
+---
 
 **Gradle**
 
@@ -332,11 +429,13 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
 
 Jar包里面只有代码，aar里面不光有代码还包括
 
+---
+
 **你是如何自学Android**
 
 首先是看书和看视频敲代码，然后看大牛的博客，做一些项目，向github提交代码，觉得自己API掌握的不错之后，开始看进阶的书，以及看源码，看完源码学习到一些思想，开始自己造轮子，开始想代码的提升，比如设计模式，架构，重构等。
 
-
+---
 
 
 
