@@ -48,6 +48,9 @@
 * `public void onStop()`
 	* 当onStop返回的时候，fragment将从屏幕上消失。
 
+* `public void onDestoryView()`
+	* 该方法的调用意味着在 `onCreateView` 中创建的视图都将被移除。
+
 * `public void onDestroy()`
 	* Android在Fragment不再使用时会调用该方法，要注意的是~这时Fragment还和Activity藕断丝连！并且可以获得Fragment对象，但无法对获得的Fragment进行任何操作（呵~呵呵~我已经不听你的了）。
 
