@@ -39,10 +39,9 @@
  	* 设计一套图片异步加载缓存方案
  	* Android UI适配
  	* [Gradle](http://wuxiaolong.me/categories/Gradle/)
-<<<<<<< HEAD
  	* [查漏补缺]()
+ 	
 =======
->>>>>>> origin/master
 
 ---
  
