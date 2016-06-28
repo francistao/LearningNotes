@@ -40,6 +40,7 @@
  	* Android UI适配
  	* [Gradle](http://wuxiaolong.me/categories/Gradle/)
  	* [查漏补缺](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/查漏补缺.md)
+ 	* [Git操作](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Git操作.md)
  	
 =======
 
