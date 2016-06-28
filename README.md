@@ -39,7 +39,7 @@
  	* 设计一套图片异步加载缓存方案
  	* Android UI适配
  	* [Gradle](http://wuxiaolong.me/categories/Gradle/)
- 	* [查漏补缺]()
+ 	* [查漏补缺](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/查漏补缺.md)
  	
 =======
 
