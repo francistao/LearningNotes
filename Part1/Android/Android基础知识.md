@@ -202,10 +202,18 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 * 动态注册：在代码中动态注册，当App退出后，也就没办法再接受广播了
 
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> c67abfcfd66909095068cb5f0c8632dc5547131b
 
 **ContentProvider使用方法**
 
+<<<<<<< HEAD
+=======
+**ContentProvider使用方法**
+
+>>>>>>> c67abfcfd66909095068cb5f0c8632dc5547131b
 ---
 
 **目前能否保证service不被杀死**
