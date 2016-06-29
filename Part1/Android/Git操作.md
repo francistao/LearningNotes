@@ -144,7 +144,7 @@ Generating public/private rsa key pair.
 //您可以根据括号中的路径来判断你的.ssh文件放在了什么地方
 Enter file in which to save the key (/c/Users/Liang Guan Quan/.ssh/id_rsa):
 
-* 复制创建的ssh-rsa密文到 https://github.com/settings/keys 这个地址中去添加一个新的SSH key，然后把你的xx.pub文件下的内容文本都复制到Key文本域中，然后就可以提交了。
+* 到 https://github.com/settings/keys 这个地址中去添加一个新的SSH key，然后把你的xx.pub文件下的内容文本都复制到Key文本域中，然后就可以提交了。
 * 添加完成之后 我们用``ssh git@github.com`` 命令来连通一下github，如果你在response里面看到了你github账号名，那么就说明配置成功了。  *let's enjoy github ;)*
 
 
