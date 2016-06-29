@@ -14,9 +14,7 @@
 ![Mou icon](http://img.blog.csdn.net/20140719225005356?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG1qNjIzNTY1Nzkx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 * Fragment依附于Activity的生命状态
-
-
-
+* ![Mou icon](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
 
 生命周期中那么多方法，懵逼了的话我们就一起来看一下每一个生命周期方法的含义吧。
 
@@ -143,35 +141,63 @@
 
 * 主要的操作都是FragmentTransaction的方法
 
-<code>
+```
 	
 	FragmentTransaction transaction = fm.benginTransatcion();//开启一个事务
 	transaction.add() 
-	往Activity中添加一个Fragment
+	//往Activity中添加一个Fragment
+
 	transaction.remove() 
-	从Activity中移除一个Fragment，如果被移除的Fragment没有添加到回退栈（回退栈后面会详细说），这个Fragment实例将会被销毁。
+	//从Activity中移除一个Fragment，如果被移除的Fragment没有添加到回退栈（回退栈后面会详细说），这个Fragment实例将会被销毁。
+
 	transaction.replace()
-	使用另一个Fragment替换当前的，实际上就是remove()然后add()的合体~
+	//使用另一个Fragment替换当前的，实际上就是remove()然后add()的合体~
+
 	transaction.hide()
-	隐藏当前的Fragment，仅仅是设为不可见，并不会销毁
+	//隐藏当前的Fragment，仅仅是设为不可见，并不会销毁
+
 	transaction.show()
-	显示之前隐藏的Fragment
+	//显示之前隐藏的Fragment
+
 	detach()
-	会将view从UI中移除,和remove()不同,此时fragment的状态依然由	FragmentManager维护。
+	//当fragment被加入到回退栈的时候，该方法与*remove()*的作用是相同的，
+	//反之，该方法只是将fragment从视图中移除，
+	//之后仍然可以通过*attach()*方法重新使用fragment，
+	//而调用了*remove()*方法之后，
+	//不仅将Fragment从视图中移除，fragment还将不再可用。
+
 	attach()
-	重建view视图，附加到UI上并显示。
-	transatcion.commit()//提交一个事务
+	//重建view视图，附加到UI上并显示。
 
-</code>
+	transatcion.commit()
+	//提交一个事务
 
-##如何添加一个Fragment事务到回退栈
+```
 
-<code>
+##管理Fragment回退栈
+* 跟踪回退栈状态
+	* 我们通过实现*``OnBackStackChangedListener``*接口来实现回退栈状态跟踪，具体如下
+ 	```
+ 	public class XXX implements FragmentManager.OnBackStackChangedListener 
 
-	FragmentTransaction.addToBackStack(String)
+ 	/** 实现接口所要实现的方法 **/
 
-</code>
+	@Override
+    public void onBackStackChanged() {
+        //do whatevery you want
+    }
 
+    /** 设置回退栈监听接口 **／
+    getSupportFragmentManager().addOnBackStackChangedListener(this);
+
+
+ 	```
+		
+* 管理回退栈
+	* ``FragmentTransaction.addToBackStack(String)`` *--将一个刚刚添加的Fragment加入到回退栈中*
+	* ``getSupportFragmentManager().getBackStackEntryCount()`` *－获取回退栈中实体数量*
+	* ``getSupportFragmentManager().popBackStack(String name, int flags)`` *－根据name立刻弹出栈顶的fragment*
+	* ``getSupportFragmentManager().popBackStack(int id, int flags)`` *－根据id立刻弹出栈顶的fragment*
 
 
 
