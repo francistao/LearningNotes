@@ -171,7 +171,8 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 
 
 **11.Fragment的生命周期和activity如何的一个关系**
-
+这我们引用本知识库里的一张图片：
+![Mou icon](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
 
 
 **为什么在Service中创建子线程而不是Activity中**
@@ -182,8 +183,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 **16.Intent的使用方法，可以传递哪些数据类型。**
 
 
-
-**Fragment生命周期**
+**17.Fragment生命周期**
 
 ![](http://7xntdm.com1.z0.glb.clouddn.com/fragment_lifecycle.png)
 
@@ -195,25 +195,27 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 ---
 
 **Service的两种启动方法，有什么区别**
+1.在Context中通过``public boolean bindService(Intent service,ServiceConnection conn,int flags)`` 方法来进行Service与Context的关联并启动，并且Service的生命周期依附于Context(**不求同时同分同秒生！但求同时同分同秒屎！！**)。
 
-**广播的两种动态注册和静态注册有什么区别。**
+2.通过`` public ComponentName startService(Intent service)``方法去启动一个Service，此时Service的生命周期与启动它的Context无关。
+
+3.要注意的是，whatever，**都需要在xml里注册你的Service**，就像这样:
+```
+<service
+        android:name=".packnameName.youServiceName"
+        android:enabled="true" />
+```
+
+**广播(Boardcast Receiver)的两种动态注册和静态注册有什么区别。**
 
 * 静态注册：在AndroidManifest.xml文件中进行注册，当App退出后，Receiver仍然可以接收到广播并且进行相应的处理
 * 动态注册：在代码中动态注册，当App退出后，也就没办法再接受广播了
 
 ---
-<<<<<<< HEAD
 
-=======
->>>>>>> c67abfcfd66909095068cb5f0c8632dc5547131b
 
 **ContentProvider使用方法**
 
-<<<<<<< HEAD
-=======
-**ContentProvider使用方法**
-
->>>>>>> c67abfcfd66909095068cb5f0c8632dc5547131b
 ---
 
 **目前能否保证service不被杀死**
@@ -223,7 +225,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 * kill 后会被重启（等待5秒左右），重传Intent，保持与重启前一样
 
 **提升service优先级**
- * 在AndroidManifest.xml文件中对于intent-filter可以通过android:priority = "1000"这个属性设置最高优先级，1000是最高值，如果数字越小则优先级越低，同时适用于广播。
+ * 在AndroidManifest.xml文件中对于intent-filter可以通过``android:priority = "1000"``这个属性设置最高优先级，1000是最高值，如果数字越小则优先级越低，**同时适用于广播**。
  * 【结论】目前看来，priority这个属性貌似只适用于broadcast，对于Service来说可能无效
 
 **提升service进程优先级**
@@ -258,15 +260,19 @@ Alpha
 Scale
 Translate
 Rotate。
+
 * frame 帧动画
 AnimationDrawable 控制
 animation-list xml布局
+
+* PropertyAnimation 属性动画
+ 
 ---
 
 **Android的数据存储形式。**
 
 * SharedPrefrences方式
-    用来存储"key-value"格式的数据，它是一个轻量级的键值存储机制，
+    用来存储"key-value"格式的数据，它是一个轻量级的键值存储机制，实际上他就是在Android本地创建一个.xml文件，内容就是你在java代码里面写进去的值。
     
 ---
 
