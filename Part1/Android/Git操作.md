@@ -133,6 +133,21 @@ git checkout [branch-name]
 git checkout -b [branch-name]
 ```
 
+##与github建立ssh通信，让Git操作免去输入密码的繁琐。
+*   首先呢，我们先建立ssh密匙。
+> ssh key must begin with 'ssh-ed25519', 'ssh-rsa', 'ssh-dss', 'ecdsa-sha2-nistp256', 'ecdsa-sha2-nistp384', or 'ecdsa-sha2-nistp521'.  -- from github
+
+    根据以上文段我们可以知道github所支持的ssh密匙类型，这里我们创建ssh-rsa密匙。
+    在command line 中输入以下指令:``ssh-keygen -t rsa``去创建一个ssh-rsa密匙。如果你并不需要为你的密匙创建密码和修改名字，那么就一路回车就OK，如果你需要，请您自行Google翻译，因为只是英文问题。
+>$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+//您可以根据括号中的路径来判断你的.ssh文件放在了什么地方
+Enter file in which to save the key (/c/Users/Liang Guan Quan/.ssh/id_rsa):
+
+* 复制创建的ssh-rsa密文到 https://github.com/settings/keys 这个地址中去添加一个新的SSH key，然后把你的xx.pub文件下的内容文本都复制到Key文本域中，然后就可以提交了。
+* 添加完成之后 我们用``ssh git@github.com`` 命令来连通一下github，如果你在response里面看到了你github账号名，那么就说明配置成功了。  *let's enjoy github ;)*
+
+
 ## gitignore
 ---
 
