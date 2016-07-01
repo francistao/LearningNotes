@@ -146,7 +146,8 @@
  	* 《程序员代码面试指南(左程云)》
  		* [1.设计一个有getMin功能的栈](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/1.设计一个有getMin功能的栈.md)
  		* [2.由两个栈组成的队列](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/2.由两个栈组成的队列.md)
- 		* [3.如何仅用递归函数和栈操作逆序一个栈]()
+ 		* [3.如何仅用递归函数和栈操作逆序一个栈](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/3.如何仅用递归函数和栈操作逆序一个栈.md)
+
  ---
 
 ##第四部分
@@ -194,8 +195,7 @@
 ---
  	
  * [Resume(简历)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6)
- 	* [陶程的简历](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/陶程-本科-Android.md)
- 	* [梁观全的简历]()
+
  
 ---
  
