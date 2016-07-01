@@ -18,7 +18,7 @@
  	* [Art和Dalvik的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Art和Dalvik区别.md)
  	* [Android关于OOM的解决方案](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android关于oom的解决方案.md)
  	* [Fragment](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Fragment.md)
-	* [Activity&Fragment](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Fragment.md)
+	* [Activity&Fragment](https://github.com/xxv/android-lifecycle)
  	* [SurfaceView](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/SurfaceView.md)
  	* [Android几种进程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android几种进程.md)
  	* [APP启动过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/APP启动过程.md)
