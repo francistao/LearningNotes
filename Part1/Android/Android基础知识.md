@@ -23,10 +23,14 @@
     这个布局也是相对自由的布局，Android 对该布局的child view的 水平layout& 垂直layout做了解析，由此我们可以FrameLayout的基础上使用标签或者Java代码对垂直方向 以及 水平方向 布局中的views任意的控制.
     
     * 相关属性：
-    　　``android:layout_centerInParent="true|false"``
-	　　``android:layout_centerHorizontal="true|false"``
-	　　``android:layout_alignParentRight="true|false"``
-	...
+    
+    ```
+    
+    　　android:layout_centerInParent="true|false"
+	　　android:layout_centerHorizontal="true|false"
+	　　android:layout_alignParentRight="true|false"
+	　　
+	```
 
 * TableLayout(表格布局)
 
@@ -75,11 +79,11 @@ Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放�
 **Activity缓存方法。**
 
 有a、b两个Activity，当从a进入b之后一段时间，可能系统会把a回收，这时候按back，执行的不是a的onRestart而是onCreate方法，a被重新创建一次，这是a中的临时数据和状态可能就丢失了。
-可以用Activity中的onSaveInstanceState()回调方法保存临时数据和状态，这个方法一定会在活动被回收之前调用。
-方法中有一个Bundle参数，putString()、putInt()等方法需要传入两个参数，一个键一个值。
-数据保存之后会在onCreate中恢复，onCreate也有一个Bundle类型的参数
+
+可以用Activity中的onSaveInstanceState()回调方法保存临时数据和状态，这个方法一定会在活动被回收之前调用。方法中有一个Bundle参数，putString()、putInt()等方法需要传入两个参数，一个键一个值。数据保存之后会在onCreate中恢复，onCreate也有一个Bundle类型的参数。
 
 示例代码：
+
 ```
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,14 +108,13 @@ Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放�
 ```
 
 一、onSaveInstanceState (Bundle outState)
- 
-先看Application Fundamentals上的一段话：
- Android calls onSaveInstanceState() before the activity becomes vulnerable to being destroyed by the system, but does not bother calling it when the instance is actually being destroyed by a user action (such as pressing the BACK key)
- 
-从这句话可以知道，当某个activity变得“容易”被系统销毁时，该activity的onSaveInstanceState就会被执行，除非该activity是被用户主动销毁的，例如当用户按BACK键的时候。
+
+当某个activity变得“容易”被系统销毁时，该activity的onSaveInstanceState就会被执行，除非该activity是被用户主动销毁的，例如当用户按BACK键的时候。
+
 注意上面的双引号，何为“容易”？言下之意就是该activity还没有被销毁，而仅仅是一种可能性。这种可能性有哪些？通过重写一个activity的所有生命周期的onXXX方法，包括onSaveInstanceState和onRestoreInstanceState方法，我们可以清楚地知道当某个activity（假定为activity A）显示在当前task的最上层时，其onSaveInstanceState方法会在什么时候被执行，有这么几种情况：
 
 1、当用户按下HOME键时。
+
 这是显而易见的，系统不知道你按下HOME后要运行多少其他的程序，自然也不知道activity A是否会被销毁，故系统会调用onSaveInstanceState，让用户有机会保存某些非永久性的数据。以下几种情况的分析都遵循该原则
 
 2、长按HOME键，选择运行其他的程序时。
@@ -144,6 +147,7 @@ onRestoreInstanceState被调用的前提是，activity A“确实”被系统销
 另外，onRestoreInstanceState的bundle参数也会传递到onCreate方法中，你也可以选择在onCreate方法中做数据还原。
 还有onRestoreInstanceState在onstart之后执行。
 至于这两个函数的使用，给出示范代码（留意自定义代码在调用super的前或后）：
+
 ```
 @Override
 public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -164,13 +168,15 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
         int myInt = savedInstanceState.getInt("MyInt");
         String myString = savedInstanceState.getString("MyString");
 }
+
 ```
+
 ---
 
 
 
+**Fragment的生命周期和activity如何的一个关系**
 
-**11.Fragment的生命周期和activity如何的一个关系**
 这我们引用本知识库里的一张图片：
 ![Mou icon](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
 
