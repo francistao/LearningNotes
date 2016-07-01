@@ -143,6 +143,7 @@
  	* 《LeetCode》
  		* [two-sum](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/LeetCode/two-sum.md)
  	* 《程序员代码面试指南(左程云)》
+ 		* [1.设计一个有getMin功能的栈](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/1.设计一个有getMin功能的栈.md)
  
  ---
 
