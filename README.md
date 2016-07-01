@@ -13,7 +13,7 @@
  	* [AsyncTask源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Asynctask源码分析.md)
  	* [插件化技术](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/插件化技术学习.md)
  	* [自定义控件](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/自定义控件.md)
- 	* [事件分发机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/事件分发机制.md)
+ 	* [事件分发机制](http://www.jianshu.com/p/e99b5e8bd67b)
  	* [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
  	* [Art和Dalvik的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Art和Dalvik区别.md)
  	* [Android关于OOM的解决方案](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android关于oom的解决方案.md)
