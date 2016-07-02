@@ -194,7 +194,7 @@
 
 ---
  	
- * [Resume(简历)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6)
+ * [Resume(简历)](https://zhuanlan.zhihu.com/p/20672941)
 
  
 ---
