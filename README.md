@@ -32,7 +32,7 @@
  	* [MVP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVP.md)
  	* [Android开机过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android开机过程.md)
  	* Retrofit源码分析
- 	* Glide源码分析
+ 	* [Glide源码分析](http://frodoking.github.io/2015/10/10/android-glide/)
  	* [EventBus用法详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/EventBus用法详解.md)
  	* EventBus源码分析
  	* [Android ORM 框架之 greenDAO 使用心得](http://www.open-open.com/lib/view/open1438065400878.html)
