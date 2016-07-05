@@ -140,6 +140,7 @@
  		* [面试题2:实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
  		* [面试题6：重建二叉树](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题6：重建二叉树.md)
  		* [面试题44:扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
+ 		* [面试题45：圆圈中最后剩下的数字](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题45：圆圈中最后剩下的数字.md)
  	* 《程序员面试金典》
  	* 《LeetCode》
  		* [two-sum](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/LeetCode/two-sum.md)
