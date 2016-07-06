@@ -31,7 +31,7 @@
  	* [Android中的MVC，MVP和MVVM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVC%2CMVP%2CMVVM的区别.md)
  	* [MVP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVP.md)
  	* [Android开机过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android开机过程.md)
- 	* Retrofit源码分析
+ 	* [Retrofit源码分析](http://www.jianshu.com/p/c1a3a881a144)
  	* [Glide源码分析](http://frodoking.github.io/2015/10/10/android-glide/)
  	* [EventBus用法详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/EventBus用法详解.md)
  	* EventBus源码分析
