@@ -25,6 +25,7 @@
  	* [APP启动过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/APP启动过程.md)
  	* Activity启动流程以及界面展示过程
  	* [图片三级缓存](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android图片中的三级缓存.md)
+    * [Bitmap的分析与使用](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Bitmap的分析与使用.md)* 
  	* [热修复的原理](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/热修复技术.md)
  	* [AIDL](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/AIDL.md)
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
