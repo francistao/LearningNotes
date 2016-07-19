@@ -117,14 +117,15 @@
      我们来看看这段代码的功效：
      压缩前：![压缩前](https://leanote.com/api/file/getImage?fileId=578d9ed8ab644135ea01684c)
      压缩后：![压缩后](https://leanote.com/api/file/getImage?fileId=578d9f76ab644135ea016851)
-     对比条件为：1080P的魅族Note3拍摄的高清无码照片
+     **对比条件为：1080P的魅族Note3拍摄的高清无码照片**
             
         2. **Reuse**
         上面介绍了``BitmapFactory``通过``InputStream``去创建`Bitmap`的这种方式，以及``BitmapFactory.Options.inSimpleSize`` 和 ``BitmapFactory.Options.inJustDecodeBounds``的使用方法，但将单个Bitmap加载到UI是简单的，但是如果我们需要一次性加载大量的图片，事情就会变得复杂起来。`Bitmap`是吃内存大户，我们不希望多次解析相同的`Bitmap`，也不希望可能不会用到的`Bitmap`一直存在于内存中，所以，这个场景下，`Bitmap`的重用变得异常的重要。
         *在这里只介绍一种``BitmapFactory.Options.inBitmap``的重用方式，下一篇文章会介绍使用三级缓存来实现Bitmap的重用。*
         
-            根据官方文档[在Android 3.0 引进了BitmapFactory.Options.inBitmap](https://developer.android.com/reference/android/graphics/BitmapFactory.Options.html#inBitmap)，如果这个值被设置了，decode方法会在加载内容的时候去重用已经存在的bitmap. 这意味着bitmap的内存是被重新利用的，这样可以提升性能, 并且减少了内存的分配与回收。然而，使用inBitmap有一些限制。特别是在Android 4.4 之前，只支持同等大小的位图。
+              根据官方文档[在Android 3.0 引进了BitmapFactory.Options.inBitmap](https://developer.android.com/reference/android/graphics/BitmapFactory.Options.html#inBitmap)，如果这个值被设置了，decode方法会在加载内容的时候去重用已经存在的bitmap. 这意味着bitmap的内存是被重新利用的，这样可以提升性能, 并且减少了内存的分配与回收。然而，使用inBitmap有一些限制。特别是在Android 4.4 之前，只支持同等大小的位图。
             我们看来看看这个参数最基本的运用方法。
+            
             ```
             new BitmapFactory.Options options = new BitmapFactory.Options();
             //inBitmap只有当inMutable为true的时候是可用的。
@@ -133,7 +134,8 @@
             options.inBitmap = reusedBitmap;
             ```
             
-            这样，当你在下一次decodeBitmap的时候，将设置了`options.inMutable=true`以及`options.inBitmap`的`Options`传入，Android就会复用你的Bitmap了，具体实例：
+              这样，当你在下一次decodeBitmap的时候，将设置了`options.inMutable=true`以及`options.inBitmap`的`Options`传入，Android就会复用你的Bitmap了，具体实例：
+            
             ```
             @Override
             protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -181,9 +183,13 @@
                 return linearLayout;
             }
             ```
-            以上代码中，我们在解析了一次一张1080P分辨率的图片，并且设置在`options.inBitmap`中，然后分别decode了同一张图片，并且传入了相同的`options`。最终只占用一份第一次解析`Bitmap`的内存。
+            
+             以上代码中，我们在解析了一次一张1080P分辨率的图片，并且设置在`options.inBitmap`中，然后分别decode了同一张图片，并且传入了相同的`options`。最终只占用一份第一次解析`Bitmap`的内存。
+            
         3. **Recycle**
         一定要记得及时回收Bitmap，否则如上分析，你的native以及dalvik的内存都会被一直占用着，最终导致OOM
+        
+        
         ```
         // 先判断是否已经回收
         if(bitmap != null && !bitmap.isRecycled()){
@@ -193,5 +199,6 @@
         }
         System.gc();
         ```
+        
     - Enjoy Android  :) 如果有误，轻喷，欢迎指正。
 
