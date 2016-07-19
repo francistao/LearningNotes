@@ -114,8 +114,8 @@
             }
         ```
             我们来看看这段代码的功效：
-            压缩前：![压缩前](leanote://file/getImage?fileId=578d9edec615a067c0000000)
-            压缩后：![压缩后](leanote://file/getImage?fileId=578d9f1ec615a067c0000001)
+            压缩前：![压缩前](https://leanote.com/api/file/getImage?fileId=578d9ed8ab644135ea01684c)
+            压缩后：![压缩后](https://leanote.com/api/file/getImage?fileId=578d9f76ab644135ea016851)
             对比条件为：1080P的魅族Note3拍摄的高清无码照片
         2. **Reuse**
         上面介绍了``BitmapFactory``通过``InputStream``去创建`Bitmap`的这种方式，以及``BitmapFactory.Options.inSimpleSize`` 和 ``BitmapFactory.Options.inJustDecodeBounds``的使用方法，但将单个Bitmap加载到UI是简单的，但是如果我们需要一次性加载大量的图片，事情就会变得复杂起来。`Bitmap`是吃内存大户，我们不希望多次解析相同的`Bitmap`，也不希望可能不会用到的`Bitmap`一直存在于内存中，所以，这个场景下，`Bitmap`的重用变得异常的重要。
