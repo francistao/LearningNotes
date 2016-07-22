@@ -208,5 +208,7 @@
 有任何问题欢迎联系：
 geniusvjr@gmail.com
 
+已同步到 [http://www.diycode.cc/wiki/androidinterview](http://www.diycode.cc/wiki/androidinterview) 
+
 拒绝任何形式的商业用途。
   
