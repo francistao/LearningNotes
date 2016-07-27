@@ -9,7 +9,7 @@
  	* [Android内存泄漏总结](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
  	* [Handler内存泄漏分析及解决](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Handler内存泄漏分析及解决.md)
  	* [Handler、Looper、Message、MessageQueue基础流程分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/线程通信基础流程分析.md)
-    * [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)* 
+    * [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
   	* [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
   	* [RecyclerView和ListView的异同](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Recyclerview和Listview的异同.md)
  	* [AsyncTask源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Asynctask源码分析.md)
