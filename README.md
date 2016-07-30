@@ -208,6 +208,14 @@
 有任何问题欢迎联系：
 geniusvjr@gmail.com
 
+欢迎关注我的知乎账号：
+
+[Francis的知乎](https://www.zhihu.com/people/tao-cheng-1)
+
+微博账号：
+
+[Francis的微博](http://weibo.com/3627982543/profile?rightmod=1&wvr=6&mod=personinfo)
+
 已同步到 [http://www.diycode.cc/wiki/androidinterview](http://www.diycode.cc/wiki/androidinterview) 
 
 拒绝任何形式的商业用途。
