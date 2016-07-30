@@ -24,7 +24,7 @@ Java 程序运行时的内存分配策略有三种,分别是静态分配,栈式�
 举个例子:
 
 ```
-public class Sample() {
+public class Sample {
     int s1 = 0;
     Sample mSample1 = new Sample();
 
