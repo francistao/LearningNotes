@@ -317,8 +317,12 @@ Android为此数据库提供了一个名为SQLiteDatabase的类，封装了一�
 **怎样退出终止App**
 
 **Asset目录与res目录的区别。**
+res 目录下面有很多文件，例如 drawable,mipmap,raw 等。res 下面除了 raw 文件不会被压缩外，其余文件都会被压缩。同时 res目录下的文件可以通过R 文件访问。Asset 也是用来存储资源，但是 asset 文件内容只能通过路径或者 AssetManager 读取。 [官方文档](https://developer.android.com/studio/projects/index.html)
 
 **Android怎么加速启动Activity。**
+分两种情况，启动应用 和 普通Activity
+启动应用 ：Application 的构造方法，onCreate 方法中不要进行耗时操作，数据预读取(例如 init 数据) 放在异步中操作
+启动普通的Activity：A 启动B 时不要在 A 的 onPause 中执行耗时操作。因为 B 的 onResume 方法必须等待 A 的 onPause 执行完成后才能运行
 
 **Android内存优化方法：ListView优化，及时关闭资源，图片缓存等等。**
 
@@ -432,7 +436,7 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
 
 构建工具、Groovy语法、Java
 
-Jar包里面只有代码，aar里面不光有代码还包括
+Jar包里面只有代码，aar里面不光有代码还包括代码还包括资源文件，比如 drawable 文件，xml 资源文件。对于一些不常变动的 Android Library，我们可以直接引用 aar，加快编译速度
 
 ---
 
