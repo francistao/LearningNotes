@@ -63,13 +63,22 @@ eventBus.post(event)
 接收消息并处理:
 
 ```
-public void onEvent(MessageEvent event) {}
+// 3.0后不再要求事件以 onEvent 开头，而是采用注解的方式
+@Subscribe(threadMode = ThreadMode.MAIN)
+public void receive(MessageEvent event){}
 ```
 
 注销事件接收：
 
 ```
 eventBus.unregister(this);
+```
+
+索引加速：
+
+```
+3.0 后引入了索引加速(默认不开启)的功能，即通过 apt 编译插件的方式，在代码编译的时候对注解进行索引，避免了以往通过反射造成的性能损耗。
+如何使用可以参考[官方文档](http://greenrobot.org/eventbus/documentation/subscriber-index/)
 ```
 
 最后，proguard 需要做一些额外处理:
