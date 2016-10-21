@@ -121,9 +121,9 @@ final方法，获得运行时类型。
 
 该方法用于哈希查找，可以减少在查找中使用equals的次数，重写了equals方法一般都要重写hashCode方法。这个方法在一些具有哈希功能的Collection中用到。
 
-一般必须满足obj1.equals(obj2)==true。可以推出obj1.hash- Code()==obj2.hashCode()，但是hashCode相等不一定就满足equals。不过为了提高效率，应该尽量使上面两个条件接近等价。
+一般必须满足obj1.equals(obj2)==true。可以推出obj1.hashCode()==obj2.hashCode()，但是hashCode相等不一定就满足equals。不过为了提高效率，应该尽量使上面两个条件接近等价。
 
-如果不重写hashcode(),在HashSet中添加两个equals的对象，会将两个对象都加入进去。
+如果不重写hashCode(),在HashSet中添加两个equals的对象，会将两个对象都加入进去。
 
 7．wait方法
 
@@ -195,7 +195,7 @@ Java 平台提供了两种类型的字符串：String和StringBuffer / StringBui
 
 **try catch finally，try里有return，finally还执行么？**
 
-会执行，在方法 返回调用者前执行。Java允许在finally中改变返回值的做法是不好的，因为如果存在finally代码块，try中的return语句不会立马返回调用者，而是纪录下返回值待finally代码块执行完毕之后再向调用者返回其值，然后如果在finally中修改了返回值，这会对程序造成很大的困扰，C#中国就从语法规定不能做这样的事。
+会执行，在方法 返回调用者前执行。Java允许在finally中改变返回值的做法是不好的，因为如果存在finally代码块，try中的return语句不会立马返回调用者，而是纪录下返回值待finally代码块执行完毕之后再向调用者返回其值，然后如果在finally中修改了返回值，这会对程序造成很大的困扰，C#中就从语法规定不能做这样的事。
 
 ---
 
