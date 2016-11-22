@@ -211,7 +211,7 @@ geniusvjr@gmail.com
 
 欢迎关注我的知乎账号：
 
-[Francis的知乎](https://www.zhihu.com/people/tao-cheng-1)
+[Francis的知乎](https://www.zhihu.com/people/FrancisTao)
 
 微博账号：
 
