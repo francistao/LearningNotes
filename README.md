@@ -8,21 +8,25 @@
     * [Android基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android基础知识.md)
  	* [Android内存泄漏总结](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
  	* [Handler内存泄漏分析及解决](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Handler内存泄漏分析及解决.md)
- 	* [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
+ 	* [Handler、Looper、Message、MessageQueue基础流程分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/线程通信基础流程分析.md)
+    * [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
   	* [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
+  	* [RecyclerView和ListView的异同](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Recyclerview和Listview的异同.md)
  	* [AsyncTask源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Asynctask源码分析.md)
  	* [插件化技术](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/插件化技术学习.md)
  	* [自定义控件](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/自定义控件.md)
- 	* [事件分发机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/事件分发机制.md)
+ 	* [事件分发机制](http://www.jianshu.com/p/e99b5e8bd67b)
  	* [ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
  	* [Art和Dalvik的区别](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Art和Dalvik区别.md)
  	* [Android关于OOM的解决方案](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android关于oom的解决方案.md)
  	* [Fragment](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Fragment.md)
+	* [Activity&Fragment](https://github.com/xxv/android-lifecycle)
  	* [SurfaceView](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/SurfaceView.md)
  	* [Android几种进程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android几种进程.md)
  	* [APP启动过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/APP启动过程.md)
  	* Activity启动流程以及界面展示过程
  	* [图片三级缓存](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android图片中的三级缓存.md)
+    * [Bitmap的分析与使用](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Bitmap的分析与使用.md)
  	* [热修复的原理](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/热修复技术.md)
  	* [AIDL](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/AIDL.md)
  	* [Binder机制](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Binder机制.md)
@@ -30,17 +34,19 @@
  	* [Android中的MVC，MVP和MVVM](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVC%2CMVP%2CMVVM的区别.md)
  	* [MVP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/MVP.md)
  	* [Android开机过程](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android开机过程.md)
- 	* Retrofit源码分析
- 	* Glide源码分析
+ 	* [Retrofit源码分析](http://www.jianshu.com/p/c1a3a881a144)
+ 	* [Glide源码分析](http://frodoking.github.io/2015/10/10/android-glide/)
  	* [EventBus用法详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/EventBus用法详解.md)
- 	* EventBus源码分析
+ 	* [EventBus源码分析](http://p.codekk.com/blogs/detail/54cfab086c4761e5001b2538)
  	* [Android ORM 框架之 greenDAO 使用心得](http://www.open-open.com/lib/view/open1438065400878.html)
+ 	* [Data Binding（数据绑定）用户指南](http://www.jcodecraeer.com/a/anzhuokaifa/developer/2015/0606/3005.html)
  	* [RxJava](http://gank.io/post/560e15be2dca930e00da1083)
  	* 设计一套图片异步加载缓存方案
  	* Android UI适配
  	* [Gradle](http://wuxiaolong.me/categories/Gradle/)
  	* [查漏补缺](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/查漏补缺.md)
  	* [Git操作](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Git操作.md)
+ 	
  	
 =======
 
@@ -138,13 +144,17 @@
  	* 《剑指Offer》
  		* [面试题2:实现Singleton模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/1.七种方式实现singleton模式.md)
  		* [面试题6：重建二叉树](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题6：重建二叉树.md)
- 		* [面试题44:扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
+ 		* [面试题11：数值的整数次方](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题11：数值的整数次方.md)
+ 		* [面试题44：扑克牌的顺子](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题44：扑克牌的顺子.md)
+ 		* [面试题45：圆圈中最后剩下的数字](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/剑指Offer/面试题45：圆圈中最后剩下的数字.md)
  	* 《程序员面试金典》
  	* 《LeetCode》
  		* [two-sum](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/LeetCode/two-sum.md)
  	* 《程序员代码面试指南(左程云)》
  		* [1.设计一个有getMin功能的栈](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/1.设计一个有getMin功能的栈.md)
- 
+ 		* [2.由两个栈组成的队列](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/2.由两个栈组成的队列.md)
+ 		* [3.如何仅用递归函数和栈操作逆序一个栈](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/Algorithm/程序员代码面试指南(左程云)/3.如何仅用递归函数和栈操作逆序一个栈.md)
+
  ---
 
 ##第四部分
@@ -191,14 +201,23 @@
 
 ---
  	
- * [Resume(简历)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6)
- 	* [陶程的简历](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/陶程-本科-Android.md)
- 	* [梁观全的简历]()
+ * [Resume(简历)](https://zhuanlan.zhihu.com/p/20672941)
+
  
 ---
  
 有任何问题欢迎联系：
 geniusvjr@gmail.com
+
+欢迎关注我的知乎账号：
+
+[Francis的知乎](https://www.zhihu.com/people/tao-cheng-1)
+
+微博账号：
+
+[Francis的微博](http://weibo.com/3627982543/profile?rightmod=1&wvr=6&mod=personinfo)
+
+已同步到 [http://www.diycode.cc/wiki/androidinterview](http://www.diycode.cc/wiki/androidinterview) 
 
 拒绝任何形式的商业用途。
   

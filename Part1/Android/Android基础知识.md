@@ -23,10 +23,14 @@
     这个布局也是相对自由的布局，Android 对该布局的child view的 水平layout& 垂直layout做了解析，由此我们可以FrameLayout的基础上使用标签或者Java代码对垂直方向 以及 水平方向 布局中的views任意的控制.
     
     * 相关属性：
-    　　``android:layout_centerInParent="true|false"``
-	　　``android:layout_centerHorizontal="true|false"``
-	　　``android:layout_alignParentRight="true|false"``
-	...
+    
+    ```
+    
+    　　android:layout_centerInParent="true|false"
+	　　android:layout_centerHorizontal="true|false"
+	　　android:layout_alignParentRight="true|false"
+	　　
+	```
 
 * TableLayout(表格布局)
 
@@ -47,8 +51,8 @@
   onRestart()—>**onStart()**—>onResume()，再次回到运行状态。
 * Activity退居后台，且系统内存不足，
   系统会杀死这个后台状态的Activity（此时这个Activity引用仍然处在任务栈中，只是这个时候引用指向的对象已经为null），若再次回到这个Activity,则会走onCreate()–>onStart()—>onResume()(将重新走一次Activity的初始化生命周期)
-* 锁定屏与解锁屏幕
-  **只会调用onPause()，而不会调用onStop()方法，开屏后则调用onResume()**
+* 锁屏：`onPause()->onStop()`
+* 解锁：`onStart()->onResume()`
   
 * 更多流程分支，请参照以下生命周期流程图
 	![](http://img.blog.csdn.net/20130828141902812)
@@ -75,11 +79,11 @@ Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放�
 **Activity缓存方法。**
 
 有a、b两个Activity，当从a进入b之后一段时间，可能系统会把a回收，这时候按back，执行的不是a的onRestart而是onCreate方法，a被重新创建一次，这是a中的临时数据和状态可能就丢失了。
-可以用Activity中的onSaveInstanceState()回调方法保存临时数据和状态，这个方法一定会在活动被回收之前调用。
-方法中有一个Bundle参数，putString()、putInt()等方法需要传入两个参数，一个键一个值。
-数据保存之后会在onCreate中恢复，onCreate也有一个Bundle类型的参数
+
+可以用Activity中的onSaveInstanceState()回调方法保存临时数据和状态，这个方法一定会在活动被回收之前调用。方法中有一个Bundle参数，putString()、putInt()等方法需要传入两个参数，一个键一个值。数据保存之后会在onCreate中恢复，onCreate也有一个Bundle类型的参数。
 
 示例代码：
+
 ```
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,14 +108,13 @@ Activity的堆栈管理以ActivityRecord为单位,所有的ActivityRecord都放�
 ```
 
 一、onSaveInstanceState (Bundle outState)
- 
-先看Application Fundamentals上的一段话：
- Android calls onSaveInstanceState() before the activity becomes vulnerable to being destroyed by the system, but does not bother calling it when the instance is actually being destroyed by a user action (such as pressing the BACK key)
- 
-从这句话可以知道，当某个activity变得“容易”被系统销毁时，该activity的onSaveInstanceState就会被执行，除非该activity是被用户主动销毁的，例如当用户按BACK键的时候。
+
+当某个activity变得“容易”被系统销毁时，该activity的onSaveInstanceState就会被执行，除非该activity是被用户主动销毁的，例如当用户按BACK键的时候。
+
 注意上面的双引号，何为“容易”？言下之意就是该activity还没有被销毁，而仅仅是一种可能性。这种可能性有哪些？通过重写一个activity的所有生命周期的onXXX方法，包括onSaveInstanceState和onRestoreInstanceState方法，我们可以清楚地知道当某个activity（假定为activity A）显示在当前task的最上层时，其onSaveInstanceState方法会在什么时候被执行，有这么几种情况：
 
 1、当用户按下HOME键时。
+
 这是显而易见的，系统不知道你按下HOME后要运行多少其他的程序，自然也不知道activity A是否会被销毁，故系统会调用onSaveInstanceState，让用户有机会保存某些非永久性的数据。以下几种情况的分析都遵循该原则
 
 2、长按HOME键，选择运行其他的程序时。
@@ -144,6 +147,7 @@ onRestoreInstanceState被调用的前提是，activity A“确实”被系统销
 另外，onRestoreInstanceState的bundle参数也会传递到onCreate方法中，你也可以选择在onCreate方法中做数据还原。
 还有onRestoreInstanceState在onstart之后执行。
 至于这两个函数的使用，给出示范代码（留意自定义代码在调用super的前或后）：
+
 ```
 @Override
 public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -164,13 +168,15 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
         int myInt = savedInstanceState.getInt("MyInt");
         String myString = savedInstanceState.getString("MyString");
 }
+
 ```
+
 ---
 
 
 
+**Fragment的生命周期和activity如何的一个关系**
 
-**11.Fragment的生命周期和activity如何的一个关系**
 这我们引用本知识库里的一张图片：
 ![Mou icon](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
 
@@ -180,10 +186,15 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 这是因为Activity很难对Thread进行控制，当Activity被销毁之后，就没有任何其它的办法可以再重新获取到之前创建的子线程的实例。而且在一个Activity中创建的子线程，另一个Activity无法对其进行操作。但是Service就不同了，所有的Activity都可以与Service进行关联，然后可以很方便地操作其中的方法，即使Activity被销毁了，之后只要重新与Service建立关联，就又能够获取到原有的Service中Binder的实例。因此，使用Service来处理后台任务，Activity就可以放心地finish，完全不需要担心无法对后台任务进行控制的情况。
 
 
-**16.Intent的使用方法，可以传递哪些数据类型。**
+**Intent的使用方法，可以传递哪些数据类型。**
 
+通过查询Intent/Bundle的API文档，我们可以获知，Intent/Bundle支持传递基本类型的数据和基本类型的数组数据，以及String/CharSequence类型的数据和String/CharSequence类型的数组数据。而对于其它类型的数据貌似无能为力，其实不然，我们可以在Intent/Bundle的API中看到Intent/Bundle还可以传递Parcelable（包裹化，邮包）和Serializable（序列化）类型的数据，以及它们的数组/列表数据。
 
-**17.Fragment生命周期**
+所以要让非基本类型和非String/CharSequence类型的数据通过Intent/Bundle来进行传输，我们就需要在数据类型中实现Parcelable接口或是Serializable接口。
+
+[http://blog.csdn.net/kkk0526/article/details/7214247](http://blog.csdn.net/kkk0526/article/details/7214247)
+
+**Fragment生命周期**
 
 ![](http://7xntdm.com1.z0.glb.clouddn.com/fragment_lifecycle.png)
 
@@ -215,6 +226,8 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 
 
 **ContentProvider使用方法**
+
+[http://blog.csdn.net/juetion/article/details/17481039](http://blog.csdn.net/juetion/article/details/17481039)
 
 ---
 
@@ -271,19 +284,25 @@ animation-list xml布局
 
 **Android的数据存储形式。**
 
-* SharedPrefrences方式
-    用来存储"key-value"格式的数据，它是一个轻量级的键值存储机制，实际上他就是在Android本地创建一个.xml文件，内容就是你在java代码里面写进去的值。
-    
+
+
+* SQLite：SQLite是一个轻量级的数据库，支持基本的SQL语法，是常被采用的一种数据存储方式。
+Android为此数据库提供了一个名为SQLiteDatabase的类，封装了一些操作数据库的api
+
+* SharedPreference： 除SQLite数据库外，另一种常用的数据存储方式，其本质就是一个xml文件，常用于存储较简单的参数设置。
+
+* File： 即常说的文件（I/O）存储方法，常用语存储大数量的数据，但是缺点是更新数据将是一件困难的事情。
+
+* ContentProvider: Android系统中能实现所有应用程序共享的一种数据存储方式，由于数据通常在各应用间的是互相私密的，所以此存储方式较少使用，但是其又是必不可少的一种存储方式。例如音频，视频，图片和通讯录，一般都可以采用此种方式进行存储。每个Content Provider都会对外提供一个公共的URI（包装成Uri对象），如果应用程序有数据需要共享时，就需要使用Content Provider为这些数据定义一个URI，然后其他的应用程序就通过Content Provider传入这个URI来对数据进行操作。
+
 ---
 
 **Sqlite的基本操作。**
 
+
+[http://blog.csdn.net/zgljl2012/article/details/44769043](http://blog.csdn.net/zgljl2012/article/details/44769043)
+
 ---
-
-
-
-**18.Merge、ViewStub的作用。**
-
 
 **如何判断应用被强杀**
 
@@ -293,22 +312,26 @@ animation-list xml布局
 
 如果在每一个Activity的onCreate里判断是否被强杀，冗余了，封装到Activity的父类中，如果被强杀，跳转回主界面，如果没有被强杀，执行Activity的初始化操作，给主界面传递intent参数，主界面会调用onNewIntent方法，在onNewIntent跳转到欢迎页面，重新来一遍流程。
 
-**19.Json有什么优劣势。**
+**Json有什么优劣势。**
 
-**20.怎样退出终止App**
+**怎样退出终止App**
 
-**21.Asset目录与res目录的区别。**
+**Asset目录与res目录的区别。**
+res 目录下面有很多文件，例如 drawable,mipmap,raw 等。res 下面除了 raw 文件不会被压缩外，其余文件都会被压缩。同时 res目录下的文件可以通过R 文件访问。Asset 也是用来存储资源，但是 asset 文件内容只能通过路径或者 AssetManager 读取。 [官方文档](https://developer.android.com/studio/projects/index.html)
 
-**22.Android怎么加速启动Activity。**
+**Android怎么加速启动Activity。**
+分两种情况，启动应用 和 普通Activity
+启动应用 ：Application 的构造方法，onCreate 方法中不要进行耗时操作，数据预读取(例如 init 数据) 放在异步中操作
+启动普通的Activity：A 启动B 时不要在 A 的 onPause 中执行耗时操作。因为 B 的 onResume 方法必须等待 A 的 onPause 执行完成后才能运行
 
-**23.Android内存优化方法：ListView优化，及时关闭资源，图片缓存等等。**
+**Android内存优化方法：ListView优化，及时关闭资源，图片缓存等等。**
 
-**24.Android中弱引用与软引用的应用场景。**
+**Android中弱引用与软引用的应用场景。**
 
-**25.Bitmap的四种属性，与每种属性队形的大小。**
+**Bitmap的四种属性，与每种属性队形的大小。**
 
 
-**26.View与View Group分类。自定义View过程：onMeasure()、onLayout()、onDraw()。**
+**View与View Group分类。自定义View过程：onMeasure()、onLayout()、onDraw()。**
 
 如何自定义控件：
 
@@ -326,17 +349,17 @@ animation-list xml布局
 7. 状态的恢复与保存
 
 
-
-
-
 **Android长连接，怎么处理心跳机制。**
 
+---
 
 **View树绘制流程**
 
 ---
 
 **下拉刷新实现原理**
+
+---
 
 **你用过什么框架，是否看过源码，是否知道底层原理。**
 
@@ -346,7 +369,7 @@ EventBus
 
 glide
 
-
+---
 
 **Android5.0、6.0新特性。**
 
@@ -369,6 +392,9 @@ Android7.0新特性
 * 增强的Java8语言模式
 * 夜间模式
 
+---
+
+
 **Context区别**
 
 * Activity和Service以及Application的Context是不一样的,Activity继承自ContextThemeWraper.其他的继承自ContextWrapper
@@ -379,8 +405,9 @@ Android7.0新特性
 * 尽管Application、Activity、Service都有自己的ContextImpl，并且每个ContextImpl都有自己的mResources成员，但是由于它们的mResources成员都来自于唯一的ResourcesManager实例，所以它们看似不同的mResources其实都指向的是同一块内存
 * Context的数量等于Activity的个数 + Service的个数 + 1，这个1为Application
 
+---
 
-**32.IntentService的使用场景与特点。**
+**IntentService的使用场景与特点。**
 
 >IntentService是Service的子类，是一个异步的，会自动停止的服务，很好解决了传统的Service中处理完耗时操作忘记停止并销毁Service的问题
 
@@ -391,17 +418,8 @@ Android7.0新特性
 
 onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息到该handler的handleMessage中去。最后handleMessage中回调onHandleIntent(intent)。
 
+---
 
-[ANR问题](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/ANR问题.md)
-
-
-
-**Handler机制**
-
-
-**AsyncTask相关问题，3.0前后的bug，如何实现并发？底层实现原理？**
-
-**Android的三级缓存如何实现**
 
 **图片缓存**
 
@@ -411,29 +429,6 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
     int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);  
     Log.d("TAG", "Max memory is " + maxMemory + "KB");  
 ```
-**AIDL**
-
-**Binder和IPC机制**
-
-**触摸事件分发机制**
-
-**Activity启动流程以及界面展示过程**
-
-**Android系统启动流程**
-
-**Zygote的启动过程。**
-
-**Android中的MVC，MVP和MVVM**
-
-**涉及动态加载技术点相关**
-
----
-
-[Android内存泄漏](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android内存泄漏总结.md)
-
-****
-
-[Android中的性能优化](http://blog.csdn.net/codeemperor/article/details/51480671)
 
 ---
 
@@ -441,7 +436,7 @@ onStartCommand中回调了onStart，onStart中通过mServiceHandler发送消息�
 
 构建工具、Groovy语法、Java
 
-Jar包里面只有代码，aar里面不光有代码还包括
+Jar包里面只有代码，aar里面不光有代码还包括代码还包括资源文件，比如 drawable 文件，xml 资源文件。对于一些不常变动的 Android Library，我们可以直接引用 aar，加快编译速度
 
 ---
 

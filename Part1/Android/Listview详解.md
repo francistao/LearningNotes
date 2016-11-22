@@ -1,6 +1,6 @@
 #ListView详解
 ---
-直接继承自AbsListView，AbsListView继承自AdapterView，AdapterView继承自AdapterView，AdapterView又继承自ViewGroup。
+直接继承自AbsListView，AbsListView继承自AdapterView，AdapterView又继承自ViewGroup。
 
 Adpater在ListView和数据源之间起到了一个桥梁的作用
 
