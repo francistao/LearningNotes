@@ -178,6 +178,7 @@ Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要
 		{
 			consume = child.dispatchTouchEvent(ev);
 		}
+		return consume;
 	}
 	
 
