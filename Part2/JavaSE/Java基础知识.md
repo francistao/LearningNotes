@@ -20,10 +20,74 @@
 **equals与==的区别。**
 
 [http://www.importnew.com/6804.html](http://www.importnew.com/6804.html)
+> ==与equals的主要区别是：==常用于比较原生类型，而equals()方法用于检查对象的相等性。另一个不同的点是：如果==和equals()用于比较对象，当两个引用地址相同，==返回true。而equals()可以返回true或者false主要取决于重写实现。最常见的一个例子，字符串的比较，不同情况==和equals()返回不同的结果。equals()方法最重要的一点是，能够根据业务要求去重写，按照自定义规则去判断两个对象是否相等。重写equals()方法的时候，要注意一下hashCode是否会因为对象的属性改变而改变，否则在使用散列集合储存该对象的时候会碰到坑！！理解equals()方法的存在是很重要的。
 
-主要区别在于前者是方法后者是操作符。“==”的行为对于每个对象来说与equals()是完全相同的，但是equals()可以基于业务规则的不同而重写（overridden )。“==”习惯用于原生（primitive）类型之间的比较，而equals()仅用于对象之间的比较。
+1. 使用==比较有两种情况：
 
-==与equals的主要区别是：==常用于比较原生类型，而equals()方法用于检查对象的相等性。另一个不同的点是：如果==和equals()用于比较对象，当两个引用地址相同，==返回true。而equals()可以返回true或者false主要取决于重写实现。最常见的一个例子，字符串的比较，不同情况==和equals()返回不同的结果。
+        比较基础数据类型(Java中基础数据类型包括八中：short,int,long,float,double,char,byte,boolen)：这种情况下，==比较的是他们的值是否相等。
+        引用间的比较：在这种情况下，==比较的是他们在内存中的地址，也就是说，除非引用指向的是同一个new出来的对象，此时他们使用`==`去比较得到true，否则，得到false。
+2. 使用equals进行比较：
+    
+        equals追根溯源，是Object类中的一个方法，在该类中，equals的实现也仅仅只是比较两个对象的内存地址是否相等，但在一些子类中，如：String、Integer 等，该方法将被重写。
+
+3. 以`String`类为例子说明`eqauls`与`==`的区别：
+> 在开始这个例子之前，同学们需要知道JVM处理String的一些特性。*Java的虚拟机在内存中开辟出一块单独的区域，用来存储字符串对象，这块内存区域被称为字符串缓冲池。*当使用
+`String a = "abc"`这样的语句进行定义一个引用的时候，首先会在*字符串缓冲池*中查找是否已经相同的对象，如果存在，那么就直接将这个对象的引用返回给a，如果不存在，则需要新建一个值为"abc"的对象，再将新的引用返回a。`String a = new String("abc");`这样的语句明确告诉JVM想要产生一个新的String对象，并且值为"abc"，于是就*在堆内存中的某一个小角落开辟了一个新的String对象*。
+
+    - `==`在比较引用的情况下，会去比较两个引用的内存地址是否相等。
+    ```
+        String str1 = "abc";
+        String str2 = "abc";
+        
+        System.out.println(str1 == str2);
+        System.out.println(str1.equals(str2));
+        
+        String str2 = new String("abc");
+        System.out.println(str1 == str2);
+        System.out.println(str1.equals(str2));
+        
+    ```
+        以上代码将会输出
+        true
+        true
+        false
+        true
+        **第一个true：**因为在str2赋值之前，str1的赋值操作就已经在内存中创建了一个值为"abc"的对象了，然后str2将会与str1指向相同的地址。
+        **第二个true：**因为`String`已经重写了`equals`方法：为了方便大家阅读我贴出来，并且在注释用进行分析：
+        ```
+        public boolean equals(Object anObject) {
+        //如果比较的对象与自身内存地址相等的话
+        //就说明他两指向的是同一个对象
+        //所以此时equals的返回值跟==的结果是一样的。
+        if (this == anObject) {
+            return true;
+        }
+        //当比较的对象与自身的内存地址不相等，并且
+        //比较的对象是String类型的时候
+        //将会执行这个分支
+        if (anObject instanceof String) {
+            String anotherString = (String)anObject;
+            int n = value.length;
+            if (n == anotherString.value.length) {
+                char v1[] = value;
+                char v2[] = anotherString.value;
+                int i = 0;
+                //在这里循环遍历两个String中的char
+                while (n-- != 0) {
+                    //只要有一个不相等，那么就会返回false
+                    if (v1[i] != v2[i])
+                        return false;
+                    i++;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+        ```
+        进行以上分析之后，就不难理解第一段代码中的实例程序输出了。
+
+
 
 ---
 
@@ -57,9 +121,9 @@ final方法，获得运行时类型。
 
 该方法用于哈希查找，可以减少在查找中使用equals的次数，重写了equals方法一般都要重写hashCode方法。这个方法在一些具有哈希功能的Collection中用到。
 
-一般必须满足obj1.equals(obj2)==true。可以推出obj1.hash- Code()==obj2.hashCode()，但是hashCode相等不一定就满足equals。不过为了提高效率，应该尽量使上面两个条件接近等价。
+一般必须满足obj1.equals(obj2)==true。可以推出obj1.hashCode()==obj2.hashCode()，但是hashCode相等不一定就满足equals。不过为了提高效率，应该尽量使上面两个条件接近等价。
 
-如果不重写hashcode(),在HashSet中添加两个equals的对象，会将两个对象都加入进去。
+如果不重写hashCode(),在HashSet中添加两个equals的对象，会将两个对象都加入进去。
 
 7．wait方法
 
@@ -131,7 +195,7 @@ Java 平台提供了两种类型的字符串：String和StringBuffer / StringBui
 
 **try catch finally，try里有return，finally还执行么？**
 
-会执行，在方法 返回调用者前执行。Java允许在finally中改变返回值的做法是不好的，因为如果存在finally代码块，try中的return语句不会立马返回调用者，而是纪录下返回值待finally代码块执行完毕之后再向调用者返回其值，然后如果在finally中修改了返回值，这会对程序造成很大的困扰，C#中国就从语法规定不能做这样的事。
+会执行，在方法 返回调用者前执行。Java允许在finally中改变返回值的做法是不好的，因为如果存在finally代码块，try中的return语句不会立马返回调用者，而是纪录下返回值待finally代码块执行完毕之后再向调用者返回其值，然后如果在finally中修改了返回值，这会对程序造成很大的困扰，C#中就从语法规定不能做这样的事。
 
 ---
 

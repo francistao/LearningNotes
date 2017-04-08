@@ -68,6 +68,24 @@ public class Hashtable<K,V>
         // 将“子Map”的全部元素都添加到Hashtable中    
         putAll(t);    
     }    
+    
+    private int hash(Object k) {
+        if (useAltHashing) {
+            if (k.getClass() == String.class) {
+                return sun.misc.Hashing.stringHash32((String) k);
+            } else {
+                int h = hashSeed ^ k.hashCode();
+
+                // This function ensures that hashCodes that differ only by
+                // constant multiples at each bit position have a bounded
+                // number of collisions (approximately 8 at default load factor).
+                h ^= (h >>> 20) ^ (h >>> 12);
+                return h ^ (h >>> 7) ^ (h >>> 4);
+             }
+        } else  {
+            return k.hashCode();
+        }
+    }
    
     public synchronized int size() {    
         return count;    
@@ -131,7 +149,7 @@ public class Hashtable<K,V>
     // 返回key对应的value，没有的话返回null    
     public synchronized V get(Object key) {    
         Entry tab[] = table;    
-        int hash = key.hashCode();    
+        int hash = hash(key);
         // 计算索引值，    
         int index = (hash & 0x7FFFFFFF) % tab.length;    
         // 找到“key对应的Entry(链表)”，然后在链表中找出“哈希值”和“键值”与key都相等的元素    
@@ -179,7 +197,7 @@ public class Hashtable<K,V>
         // 若“Hashtable中已存在键为key的键值对”，    
         // 则用“新的value”替换“旧的value”    
         Entry tab[] = table;    
-        int hash = key.hashCode();    
+        int hash = hash(key);
         int index = (hash & 0x7FFFFFFF) % tab.length;    
         for (Entry<K,V> e = tab[index] ; e != null ; e = e.next) {    
             if ((e.hash == hash) && e.key.equals(key)) {    
@@ -211,7 +229,7 @@ public class Hashtable<K,V>
     // 删除Hashtable中键为key的元素    
     public synchronized V remove(Object key) {    
         Entry tab[] = table;    
-        int hash = key.hashCode();    
+        int hash = hash(key);
         int index = (hash & 0x7FFFFFFF) % tab.length;    
           
         //从table[index]链表中找出要删除的节点，并删除该节点。  
@@ -376,7 +394,7 @@ public class Hashtable<K,V>
             Map.Entry entry = (Map.Entry)o;    
             Object key = entry.getKey();    
             Entry[] tab = table;    
-            int hash = key.hashCode();    
+            int hash = hash(key);
             int index = (hash & 0x7FFFFFFF) % tab.length;    
    
             for (Entry e = tab[index]; e != null; e = e.next)    
@@ -394,7 +412,7 @@ public class Hashtable<K,V>
             Map.Entry<K,V> entry = (Map.Entry<K,V>) o;    
             K key = entry.getKey();    
             Entry[] tab = table;    
-            int hash = key.hashCode();    
+            int hash = hash(key);
             int index = (hash & 0x7FFFFFFF) % tab.length;    
    
             for (Entry<K,V> e = tab[index], prev = null; e != null;    
@@ -837,7 +855,7 @@ public class Hashtable<K,V>
  public synchronized boolean containsKey(Object key) {    
      Entry tab[] = table;    
 /计算hash值，直接用key的hashCode代替  
-     int hash = key.hashCode();      
+     int hash = hash(key);
      // 计算在数组中的索引值   
      int index = (hash & 0x7FFFFFFF) % tab.length;    
      // 找到“key对应的Entry(链表)”，然后在链表中找出“哈希值”和“键值”与key都相等的元素    
@@ -852,4 +870,4 @@ public class Hashtable<K,V>
 
  很明显，如果value为null，会直接抛出NullPointerException异常，但源码中并没有对key是否为null判断，有点小不解！不过NullPointerException属于RuntimeException异常，是可以由JVM自动抛出的，也许对key的值在JVM中有所限制吧。
 4. Hashtable扩容时，将容量变为原来的2倍加1，而HashMap扩容时，将容量变为原来的2倍。
-5. Hashtable计算hash值，直接用key的hashCode()，而HashMap重新计算了key的hash值，Hashtable在求hash值对应的位置索引时，用取模运算，而HashMap在求位置索引时，则用与运算，且这里一般先用hash&0x7FFFFFFF后，再对length取模，&0x7FFFFFFF的目的是为了将负的hash值转化为正值，因为hash值有可能为负数，而&0x7FFFFFFF后，只有符号外改变，而后面的位都不变。
+5. Hashtable和HashMap都重新计算了key的hash值，Hashtable在求hash值对应的位置索引时，用取模运算，而HashMap在求位置索引时，则用与运算，且这里一般先用hash&0x7FFFFFFF后，再对length取模，&0x7FFFFFFF的目的是为了将负的hash值转化为正值，因为hash值有可能为负数，而&0x7FFFFFFF后，只有符号外改变，而后面的位都不变。
