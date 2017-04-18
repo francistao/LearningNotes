@@ -1,7 +1,7 @@
 # LearningNotes
   ---
 
-##第一部分：
+## 第一部分：
 
 * [Android(安卓)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/Android)
 
@@ -83,7 +83,7 @@
 
  ---
 
-##第二部分
+## 第二部分
 
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
   * [Java基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java基础知识.md)
@@ -119,7 +119,7 @@
  ---
 
 
-##第三部分
+## 第三部分
 
 * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
     * [数组](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/数组.md)
@@ -154,7 +154,7 @@
 
  ---
 
-##第四部分
+## 第四部分
 
 * [Network(网络)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/Network)
     * [TCP/UDP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/TCP与UDP.md)
@@ -168,7 +168,7 @@
 ---
 
 
-##第五部分
+## 第五部分
 
 * [ReadingNotes(读书笔记)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/ReadingNotes)
    * [《APP研发录》第1章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《APP研发录》第1章读书笔记.md)
@@ -186,7 +186,7 @@
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
    * [项目难点](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/项目.md)
 
-##第六部分
+## 第六部分
 
 * [InterviewExperience(面试经验)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6/InterviewExperience)
     * [Alibaba](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/Alibaba.md)

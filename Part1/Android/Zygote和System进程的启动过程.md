@@ -1,7 +1,7 @@
-#Zygote和System进程的启动过程
+# Zygote和System进程的启动过程
 ---
 
-##init脚本的启动
+## init脚本的启动
 ---
 
 ```
@@ -22,7 +22,7 @@ service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-sys
 * --start-system-server 表明Zygote启动完成之后，要启动System进程。
 * socket zygote stream 666 在Zygote启动时，创建一个权限为666的socket。此socket用来请求Zygote创建新进程。socket的fd保存在名称为“ANDROID_SOCKET_zygote”的环境变量中。
 
-##Zygote进程的启动过程
+## Zygote进程的启动过程
 ---
 
 ```
@@ -59,7 +59,7 @@ ZygoteInit类的main方法运行时，会通过registerZygoteSocket方法创建�
 selectReadable方法会返回一个整数值index。如果index为0，则说明这个是AMS发过来的连接请求。这时会与AMS建立一个新的socket连接，并包装成ZygoteConnection对象保存起来。如果index大于0，则说明这是AMS发过来的一个创建新进程的请求。此时会取出之前保存的ZygoteConnection对象，调用其中的runOnce方法创建新进程。调用完成后将connection删除。
 这就是Zygote处理一次AMS请求的过程。
 
-##System进程的启动
+## System进程的启动
 ---
 
 ```
@@ -97,7 +97,7 @@ System进程是在ZygoteInit的handleSystemServerProcess中开始启动的。
 6. 执行到这里，System就将系统的关键服务启动起来了，这时候其他进程便可利用这些Service提供的基础服务了。
 7. 最后会调用ActivityManagerService的systemReady方法，在该方法里会启动系统界面以及Home程序。
 
-##Android进程启动
+## Android进程启动
 
 ---
 

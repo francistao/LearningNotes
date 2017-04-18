@@ -1,4 +1,4 @@
-#Thread和Runnable实现多线程的区别
+# Thread和Runnable实现多线程的区别
 ---
 
 Java中实现多线程有两种方法：继承Thread、实现Runnable接口，在程序开发中只要是多线程，肯定永远以实现Runnable接口为主，因为实现Runnable接口相比继承Thread类有如下优势：

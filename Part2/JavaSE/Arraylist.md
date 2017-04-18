@@ -4,7 +4,7 @@
 * 实现的接口：List、Collectin、Iterable、Serializable、Cloneable、RandomAccess
 * 子类：AttributeList、RoleList、RoleUnresolvedList
 
-##简介
+## 简介
 ---
 * 它是顺序表
 * 大小可变
@@ -12,7 +12,7 @@
 * 可LinkedList一样，不具备线程同步的安全性、但速度较快
 * 第一次定义的时候没有指定数组的长度则长度是0，在第一次添加的时候判断如果是空则追加10。
 
-##容量是如何变化的
+## 容量是如何变化的
 ---
 在源码中：
 
@@ -30,17 +30,17 @@ private transient Object[] elementData;
 * 之后每次添加时，会先确保容量是否够用
 * 如果不够用，每次增加的容量为 newCapacity = oldCapacity + (oldCapacity >> 1)；即，每次增加为原来的1.5倍。
 
-##和Vector的区别
+## 和Vector的区别
 ---
 * Vector线程安全
 * ArrayList线程不安全，速度快
 
-##和LinkedList的区别
+## 和LinkedList的区别
 ---
 * ArrayList是顺序表，LinkedList是链表
 * ArrayList查找，修改方便，LinkedList添加、删除方便
 
-##方法
+## 方法
 ---
 **void ensureCapacity(int minCapacity)**
 设置容量能容纳下minCapacity个元素

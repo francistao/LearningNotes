@@ -1,7 +1,7 @@
-##View的工作原理
+## View的工作原理
 ---
 
-###4.1 初识ViewRoot和DecorView
+### 4.1 初识ViewRoot和DecorView
 
 1、ViewRoot对应于ViewRootImpl类，它是连接WindowManager和DecorView的纽带，View的三大流程均是通过ViewRoot来完成的。在ActivityThread中，当Activity对象被创建完毕后，会将DecorView添加到Window中，同时会创建ViewRootImpl对象，并将ViewRootImpl对象和DecorView建立连接。
 
@@ -13,7 +13,7 @@
 
 5、DecorView其实是一个FrameLayout，其中包含了一个竖直方向的LinearLayout，上面是标题栏，下面是内容栏（id为android.R.id.content）。View层的事件都先经过DecorView，然后才传给我们的View。
 
-###理解MeasureSpec
+### 理解MeasureSpec
 
 1、MeasureSpec通过将SpecMode和SpecSize打包成一个int值来避免过多的内存分配，为了方便操作，其提供了打包和解包方法。SpecMode和SpecSize也是一个int值，一组SpecMode和SpecSize可以打包为一个MeasureSpec，而一个MeasureSpec可以通过解包的形式来得出其原始的SpecMode和SpecSize。
 
@@ -33,7 +33,7 @@ MeasureSpec不是唯一由LayoutParams决定的，LayoutParams需要和父容器
 当view的宽高是match_parent时，如果父容器的模式是精确模式，那么view也是精确模式，并且大小是父容器的剩余空间；如果父容器是最大模式，那么view也是最大模式，并且大小是不会超过父容器的剩余空间。
 当view的宽高是wrap_content时，不管父容器的模式是精确模式还是最大模式，view的模式总是最大模式，并且大小不超过父容器的剩余空间。
 
-###4.3 View的工作流程
+### 4.3 View的工作流程
 
 1、View的measure过程和Activity的生命周期方法不是同步执行的，因此无法保证Activity执行了onCreate、onStart、onResume时某个View已经测量完毕了。如果View还没有测量完毕，那么获得的宽和高都是0。下面是四种解决该问题的方法：
 
@@ -88,7 +88,7 @@ view.measure(widthMeasureSpec, heightMeasureSpec);
 3. 绘制children：dispatchDraw;
 4. 绘制装饰：onDrawScrollBars
 
-###4.4自定义View
+### 4.4自定义View
 
 作者将自定义View分为以下4类：
 

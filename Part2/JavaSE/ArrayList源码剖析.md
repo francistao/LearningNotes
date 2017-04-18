@@ -1,4 +1,4 @@
-##ArrayList简介
+## ArrayList简介
 
 ArrayList是基于数组实现的，是一个动态数组，其容量能自动增长，类似于C语言中的动态申请内存，动态增长内存。
 
@@ -380,7 +380,7 @@ public class ArrayList<E> extends AbstractList<E>
 }  
 ```
 
-##几点总结
+## 几点总结
 
 关于ArrayList的源码，给出几点比较重要的总结：
 
