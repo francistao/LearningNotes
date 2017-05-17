@@ -16,6 +16,7 @@ onTrimMemory()方法还有很多种其他类型的回调，可以在手机内存
 
 ###是有优化过的数据集合
 Android提供了一系列优化过后的数据集合工具类，如SparseArray、SparseBooleanArray、LongSparseArray，使用这些API可以让我们的程序更加高效。HashMap工具类会相对比较低效，因为它需要为每一个键值对都提供一个对象入口，而SparseArray就避免掉了基本数据类型转换成对象数据类型的时间。
+[看如何利用SparseArray和ArrayMap替代HashMap提高内存效率](http://blog.csdn.net/u010687392/article/details/47809295)
 
 ###知晓内存的开支情况
 * 使用枚举通常会比使用静态常量消耗两倍以上的内存，尽可能不使用枚举
