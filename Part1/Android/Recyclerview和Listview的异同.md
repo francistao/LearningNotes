@@ -47,6 +47,68 @@ long id, boolean checked) { ... }
     public void onDestroyActionMode(ActionMode mode) { ... }
 });
 	```
-	而RecyclerView则没有此功能。
+	而RecyclerView则没有此功能。另外,这里需要提及的一点就是在纵向RecyclerView里嵌套横向RecyleView 时,如果纵向RecyleView 有下拉刷新功能,那么内部的横向RecyleView 就会滑动体验很差,(只有纯横向滑动时,才能滑动内部的横向RecyleView ,否则滑动事件就会影响到下拉刷新),这里需要怎么解决呢?
+	--添加拦截判断:
+	```
+	public class MySwipeRefreshLayout extends SwipeRefreshLayout {
+
+  private boolean mIsVpDragger;
+  private final int mTouchSlop;
+  private float startY;
+  private float startX;
+
+  public MySwipeRefreshLayout(Context context) {
+    super(context);
+    mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+  }
+
+  public MySwipeRefreshLayout(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+  }
+
+
+  @Override
+  public boolean onInterceptTouchEvent(MotionEvent ev) {
+    int action = ev.getAction();
+    switch (action) {
+      case MotionEvent.ACTION_DOWN:
+        // 记录手指按下的位置
+        startY = ev.getY();
+        startX = ev.getX();
+        // 初始化标记
+        mIsVpDragger = false;
+        break;
+      case MotionEvent.ACTION_MOVE:
+        // 如果viewpager正在拖拽中，那么不拦截它的事件，直接return false；
+        if (mIsVpDragger) {
+          return false;
+        }
+
+        // 获取当前手指位置
+        float endY = ev.getY();
+        float endX = ev.getX();
+        float distanceX = Math.abs(endX - startX);
+        float distanceY = Math.abs(endY - startY);
+        // 如果X轴位移大于Y轴位移，那么将事件交给viewPager处理。
+        if (distanceX > mTouchSlop && distanceX > distanceY) {
+          mIsVpDragger = true;
+          return false;
+        }
+        break;
+      case MotionEvent.ACTION_UP:
+      case MotionEvent.ACTION_CANCEL:
+        // 初始化标记
+        mIsVpDragger = false;
+        break;
+    }
+    // 如果是Y轴位移大于X轴，事件交给swipeRefreshLayout处理。
+    return super.onInterceptTouchEvent(ev);
+  }
+}
+	```
+	
+	
+	
 	
 [http://www.cnblogs.com/littlepanpc/p/4497290.html](http://www.cnblogs.com/littlepanpc/p/4497290.html)
