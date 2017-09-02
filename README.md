@@ -210,6 +210,10 @@ geniusvjr@gmail.com
 
 [Francis的知乎](https://www.zhihu.com/people/FrancisTao)
 
+微信公众号：
+
+幼稚园老大哥
+
 微博账号：
 
 [Francis的微博](http://weibo.com/3627982543/profile?rightmod=1&wvr=6&mod=personinfo)
