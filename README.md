@@ -1,7 +1,7 @@
 # LearningNotes
   ---
 
-##第一部分：
+## 第一部分：
 
 * [Android(安卓)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/Android)
 
@@ -10,8 +10,8 @@
     * [Handler内存泄漏分析及解决](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Handler内存泄漏分析及解决.md)
     * [Handler、Looper、Message、MessageQueue基础流程分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/线程通信基础流程分析.md)
     * [Android性能优化](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Android性能优化.md)
-      * [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
-      * [RecyclerView和ListView的异同](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Recyclerview和Listview的异同.md)
+    * [ListView详解](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Listview详解.md)
+    * [RecyclerView和ListView的异同](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Recyclerview和Listview的异同.md)
     * [AsyncTask源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Asynctask源码分析.md)
     * [插件化技术](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/插件化技术学习.md)
     * [自定义控件](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/自定义控件.md)
@@ -47,14 +47,14 @@
     * [查漏补缺](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/查漏补缺.md)
     * [Git操作](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/Git操作.md)
 
-=======
+
 
 ---
 
 * [DesignPattern(设计模式)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part1/DesignPattern)
 
 
-* [面向对象六大原则](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/常见的面向对象设计原则.md)
+     * [面向对象六大原则](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/常见的面向对象设计原则.md)
      * [单例模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/单例模式.md)
      * [Builder模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/Builder模式.md)
      * [原型模式](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/DesignPattern/原型模式.md)
@@ -81,9 +81,9 @@
      * 桥接模式
 
 
- ---
+---
 
-##第二部分
+## 第二部分
 
 * [JavaSE(Java基础)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part2/JavaSE)
   * [Java基础知识](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/Java基础知识.md)
@@ -119,7 +119,7 @@
  ---
 
 
-##第三部分
+## 第三部分
 
 * [DataStructure(数据结构)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part3/DataStructure)
     * [数组](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/数组.md)
@@ -154,7 +154,7 @@
 
  ---
 
-##第四部分
+## 第四部分
 
 * [Network(网络)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part4/Network)
     * [TCP/UDP](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/Network/TCP与UDP.md)
@@ -165,10 +165,10 @@
     * [Linux系统的IPC](https://github.com/GeniusVJR/LearningNotes/blob/master/Part4/OperatingSystem/Linux系统的IPC.md)
 
 
----
+ ---
 
 
-##第五部分
+## 第五部分
 
 * [ReadingNotes(读书笔记)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/ReadingNotes)
    * [《APP研发录》第1章读书笔记](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/ReadingNotes/《APP研发录》第1章读书笔记.md)
@@ -186,7 +186,7 @@
 * [Project(项目)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part5/Project)
    * [项目难点](https://github.com/GeniusVJR/LearningNotes/blob/master/Part5/Project/项目.md)
 
-##第六部分
+## 第六部分
 
 * [InterviewExperience(面试经验)](https://github.com/GeniusVJR/LearningNotes/tree/master/Part6/InterviewExperience)
     * [Alibaba](https://github.com/GeniusVJR/LearningNotes/blob/master/Part6/InterviewExperience/Alibaba.md)
@@ -209,6 +209,10 @@ geniusvjr@gmail.com
 欢迎关注我的知乎账号：
 
 [Francis的知乎](https://www.zhihu.com/people/FrancisTao)
+
+微信公众号：
+
+幼稚园老大哥
 
 微博账号：
 

@@ -178,6 +178,7 @@ Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要
 		{
 			consume = child.dispatchTouchEvent(ev);
 		}
+		return consume;
 	}
 	
 
@@ -213,13 +214,13 @@ Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要
 
 2、滑动冲突的处理规则
 
-可以根据滑动距离和水平方向形成的夹角；或者根绝水平和竖直方向滑动的距离差；或者两个方向上的速度差等。
+可以根据滑动距离和水平方向形成的夹角；或者根据水平和竖直方向滑动的距离差；或者两个方向上的速度差等。
 
 3、滑动冲突的解决方式
 
 * 外部拦截法
 
-点击事件都经过父容器的拦截处理，如果父容器需要此事件就拦截，如果不需要此事件就不拦截，该方法需要重写父容器的onInterceptTouchEvent方法，再内部做相应的拦截即可，伪代码如下：
+点击事件都经过父容器的拦截处理，如果父容器需要此事件就拦截，如果不需要此事件就不拦截，该方法需要重写父容器的onInterceptTouchEvent方法，在内部做相应的拦截即可，伪代码如下：
 
 	public boolean onInterceptTouchEvent(MotionEvent event) {
     	boolean intercepted = false;
