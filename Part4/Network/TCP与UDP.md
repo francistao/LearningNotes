@@ -155,8 +155,8 @@ TCP与UDP的区别
 		<td>UDP有边界</td>
 	</tr>
 	<tr>
-		<td>TCP速度快</td>
-		<td>UDP速度慢</td>
+		<td>TCP速度慢</td>
+		<td>UDP速度快</td>
 	</tr>
 	<tr>
 		<td>TCP面向字节流</td>
