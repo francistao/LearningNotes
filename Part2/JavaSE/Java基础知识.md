@@ -400,7 +400,7 @@ JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这
 
 **String类内部实现，能否改变String对象内容**
 
-[String源码分析](https://github.com/GeniusVJR/LearningNotes/blob/master/Part2/JavaSE/String源码分析.md)
+[String源码分析](https://github.com/HuYingBao/LearningNotes/blob/master/Part2/JavaSE/String源码分析.md)
 
 [http://blog.csdn.net/zhangjg_blog/article/details/18319521](http://blog.csdn.net/zhangjg_blog/article/details/18319521)
 

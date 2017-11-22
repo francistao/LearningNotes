@@ -14,7 +14,7 @@
 ![Mou icon](http://img.blog.csdn.net/20140719225005356?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG1qNjIzNTY1Nzkx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 * Fragment依附于Activity的生命状态
-* ![Mou icon](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
+* ![Mou icon](https://github.com/HuYingBao/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
 
 生命周期中那么多方法，懵逼了的话我们就一起来看一下每一个生命周期方法的含义吧。
 
