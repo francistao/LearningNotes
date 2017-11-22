@@ -1,11 +1,11 @@
-##LinkedList简介
+## LinkedList简介
 LinkedList是基于双向循环链表（从源码中可以很容易看出）实现的，除了可以当作链表来操作外，它还可以当作栈，队列和双端队列来使用。
 
 LinkedList同样是非线程安全的，只在单线程下适合使用。
 
 LinkedList实现了Serializable接口，因此它支持序列化，能够通过序列化传输，实现了Cloneable接口，能被克隆。
 
-##LinkedList源码剖析
+## LinkedList源码剖析
 LinkedList的源码如下（加入了比较详细的注释）
 
 ```
@@ -649,7 +649,7 @@ public class LinkedList<E>
    
 }   
 ```
-##几点总结
+## 几点总结
 
 关于LinkedList的源码，给出几点比较重要的总结：
 

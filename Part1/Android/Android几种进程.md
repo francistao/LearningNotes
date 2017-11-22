@@ -1,4 +1,4 @@
-#Android几种进程
+# Android几种进程
 ---
 
 1. 前台进程：即与用户正在交互的Activity或者Activity用到的Service等，如果系统内存不足时前台进程是最后被杀死的

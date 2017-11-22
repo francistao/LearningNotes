@@ -1,4 +1,4 @@
-#APP启动过程
+# APP启动过程
 ---
 
 ![](http://7xntdm.com1.z0.glb.clouddn.com/activity_start_flow.png)

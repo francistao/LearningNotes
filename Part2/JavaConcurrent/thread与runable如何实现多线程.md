@@ -1,4 +1,4 @@
-##Thread与Runable如何实现多线程?
+## Thread与Runable如何实现多线程?
 
 Java实现多线程有两种途径：继承Thread类或者实现Runnable接口。Runnable是接口
 

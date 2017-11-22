@@ -1,4 +1,4 @@
-#APP研发录第二章笔记
+# APP研发录第二章笔记
 ---
 
 * 抛弃AsyncTask，自定义一套网络底层的封装框架。
@@ -6,20 +6,20 @@
 * 设计一套MockService的机制，在没有MobileAPI的时候，也能假装获取到了网络返回的数据。
 * 封装了用户Cookie的逻辑。
 
-##2.1 网络底层封装
+## 2.1 网络底层封装
 
 很多公司和团队都是用AsyncTask来封装网络底层，因为这个类非常好用，内部封装了很多好用的方法，但缺点是可扩展性不高。
 
 对于网络请求，我们一般定义为GET和POST即可，GET为请求数据，POST为修改数据（增删改）。
 
-###1.Request格式
+### 1.Request格式
 
 所有的MobileAPI都可以写作http://www.xxx.com/aaaa.api的形式。
 
 * 对于GET，我们可以写作：http://www.xxx.com/aaaa.api?k1=va&k2=v2的形式，也就是说，把key-value这样的键值对存放在URL上。之所以这样设计，是为了更方便地定义数据缓存。我们尽量使GET的参数都是string、int这样的简单类型。
 * 对于POST，我们将key-value这样的键值对存放在Form表单中，进行提交。POST经常会提交大量数据，所以有些键值对要定义成集合或者复杂的自定义实体，这时我们就需要将这样的值转换为JSON字符串进行提交，由App传递到MobileAPI后，再将JSON字符串转换为对应的实体。
 
-###2.Response格式
+### 2.Response格式
 
 我们一般使用JSON作为MobileAPI返回的结果。最规范的JSON数据返回格式如下。
 JSON数据格式1：
@@ -101,7 +101,7 @@ public class Response
 } 
 ```
 
-####2.1.2 AsyncTask的使用和缺点
+#### 2.1.2 AsyncTask的使用和缺点
 
 对AsyncTask的封装属于网络底层的技术，所以AsyncTask应该封装在AndroidLib类库中，而不是具体的项目里。
 对网络异常的分类，也就是Response类中的errorType字段，分析如下：
@@ -209,7 +209,7 @@ protected void loadData() {
 
 如果你不信，我们可以做个试验。记录每次MobileAPI请求发起和接收数据的时间点，你会看到，在迅速进入二级页面后，首页的十几个MobileAPI请求只有发起时间并没有返回时间，说明它们还在处理过程中，都被堵塞了。
 
-####2.1.3 使用原生的ThreadPoolExcutor+Runnable+Handler
+#### 2.1.3 使用原生的ThreadPoolExcutor+Runnable+Handler
 
 既然AsyncTask有诸多问题，那么退而求其次，使用ThreadPoolExecutor+Runnable+Handler的原生方式，对网络底层进行封装。
 
@@ -217,7 +217,7 @@ protected void loadData() {
 
 [《App研发录》 源码](http://www.cnblogs.com/Jax/p/4656789.html)
 
-####2.1.4　网络底层的一些优化工作
+#### 2.1.4　网络底层的一些优化工作
 
 接下来将完善这个框架，修复其中的一些瑕疵，如onFail的统一处理机制、UrlConfigManager的优化、ProgressBar的处理等。
 
@@ -423,11 +423,11 @@ void loadAPIData1() {
 
 不要把Dialog的show方法和dismiss方法封装到网络底层。网络底层的调用经常是在子线程执行的，子线程是不能操作Dialog、Toast和控件的。
 
-###2.2　App数据缓存设计
+### 2.2　App数据缓存设计
 
 如果以为上一节内容就是网络底层框架的全部，那就错了。那只是网络底层框架的最核心的功能，我们还有很多高级功能没有介绍。在接下来的几节中，我将陆续介绍到这些高级功能。本节先介绍App本地的缓存策略。
 
-####2.2.1　数据缓存策略
+#### 2.2.1　数据缓存策略
 
 对于任何一款应用类App，如果访问MobileAPI的速度和牛车一样慢，那么就是失败之作。不要在WiFi下测试速度，那是自欺欺人，要把App放在2G或3G网络环境下进行测试，才能得到大部分用户的真实数据。
 
@@ -521,7 +521,7 @@ public class YoungHeartApplication extends Application {
 } 
 ```
 
-####2.2.2　强制更新
+#### 2.2.2　强制更新
 
 不光是App端需要记录缓存数据，在MobileAPI的很多接口，其实也需要一样的设计。
 
@@ -564,7 +564,7 @@ RemoteService.getInstance().invoke(
   weatherCallback); 
 ```
 
-###2.3　MockService
+### 2.3　MockService
 
 设计App端MockService包括如下几个关键点：
 
@@ -649,9 +649,9 @@ public void invoke(final BaseActivity activity,
 } 
 ```
 
-###2.4　用户登录
+### 2.4　用户登录
 
-####2.4.1　登录成功后的各种场景
+#### 2.4.1　登录成功后的各种场景
 
 首先，贯穿App的，应该有一个User全局变量，在每次登录成功后，会将其isLogin属性设置为true，在退出登录后，则将该属性设置为false。这个User全局变量要支持序列化到本地的功能，这样数据才不会因内存回收而丢失。
 
@@ -757,7 +757,7 @@ RequestCallback loginCallback = new AbstractRequestCallback() {
 
 我们看到，对于情形2，当用户在LoginMainActivity点击按钮想跳转到NewsActivity，如果已经登录，就直接跳转过去；否则，先到LoginActivity登录，然后回调LoginMain-Activity的onActivityResult，仍然跳转到NewsActivity。
 
-####2.4.2　自动登录
+#### 2.4.2　自动登录
 
 所谓自动登录，就是登录成功后，重启App后用户仍然是登录状态。
 
@@ -862,7 +862,7 @@ public synchronized void saveCookie() {
 * 用户注册功能，一般在注册成功后，都会拿着用户名和密码再调用一次登录接口，这就又和验证码功能冲突了，解决方案是注册成功后直接跳转到登录页面，让用户手动再输入一次。这是从产品层面来解决问题。另一种解决方案是，注册成功后进入个人中心页面，不需要再登录一次，而是把注册和登录接口绑在一起。
 * 对于Cookie过期，App应该跳转到登录页面，让用户手动进行登录。这里有一个比较有挑战性的工作，就是登录成功后，应该返回手动登录之前的那个页面。我们在下一节再细说这个技术。
 
-####2.4.3　Cookie过期的统一处理
+#### 2.4.3　Cookie过期的统一处理
 
 Cookie不是一直有效的，到了一定时间就会失效。
 
@@ -936,16 +936,16 @@ public void onCookieExpired() {
 } 
 ```
 
-####2.4.4　防止黑客刷库
+#### 2.4.4　防止黑客刷库
 
 
 * MobileAPI在发现有同一IP短时间内频繁访问某一个MobileAPI接口时，就直接返回一段HTML5，要求用户输入验证码。
 * App在接收到这段代码时，就在页面上显示一个浮层，里面一个WebView，显示这个要求用户输入验证码的HTML5。
 
 
-###2.5　HTTP头中的奥妙
+### 2.5　HTTP头中的奥妙
 
-####2.5.1　HTTP请求
+#### 2.5.1　HTTP请求
 
 HTTP请求分为HTTPRequest和HTTPResponse两种。但无论哪种请求，都由header和body两部分组成。
 
@@ -1045,7 +1045,7 @@ response = httpClient.execute(request);
 
 前面我们介绍过Cookie，其实也是HTTP头的一部分。它的作用我们已经见识过了。下面将讨论HTTP头中的另几个重要字段。
 
-####2.5.2　时间校准
+#### 2.5.2　时间校准
 
 接下来要介绍的是HTTP Response头中另一重要属性：Date，这个属性中记录了MobileAPI当时的服务器时间。
 
@@ -1129,7 +1129,7 @@ btnShowTime.setOnClickListener(new View.OnClickListener() {
 }); 
 ```
 
-####2.5.3　开启gzip压缩
+#### 2.5.3　开启gzip压缩
 
 HTTP协议上的gzip编码是一种用来改进Web应用程序性能的技术。大流量的Web站点常常使用gzip压缩技术来减少传输量的大小，减少传输量大小有两个明显的好处，一是可以减少存储空间，二是通过网络传输时，可以减少传输的时间。
 

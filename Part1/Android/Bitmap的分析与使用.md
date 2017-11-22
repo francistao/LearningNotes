@@ -123,7 +123,7 @@
         上面介绍了``BitmapFactory``通过``InputStream``去创建`Bitmap`的这种方式，以及``BitmapFactory.Options.inSimpleSize`` 和 ``BitmapFactory.Options.inJustDecodeBounds``的使用方法，但将单个Bitmap加载到UI是简单的，但是如果我们需要一次性加载大量的图片，事情就会变得复杂起来。`Bitmap`是吃内存大户，我们不希望多次解析相同的`Bitmap`，也不希望可能不会用到的`Bitmap`一直存在于内存中，所以，这个场景下，`Bitmap`的重用变得异常的重要。
         *在这里只介绍一种``BitmapFactory.Options.inBitmap``的重用方式，下一篇文章会介绍使用三级缓存来实现Bitmap的重用。*
         
-              根据官方文档[在Android 3.0 引进了BitmapFactory.Options.inBitmap](https://developer.android.com/reference/android/graphics/BitmapFactory.Options.html#inBitmap)，如果这个值被设置了，decode方法会在加载内容的时候去重用已经存在的bitmap. 这意味着bitmap的内存是被重新利用的，这样可以提升性能, 并且减少了内存的分配与回收。然而，使用inBitmap有一些限制。特别是在Android 4.4 之前，只支持同等大小的位图。
+              根据官方文档[在Android 3.0 引进了BitmapFactory.Options.inBitmap](https://developer.android.com/reference/android/graphics/BitmapFactory.Options.html# inBitmap)，如果这个值被设置了，decode方法会在加载内容的时候去重用已经存在的bitmap. 这意味着bitmap的内存是被重新利用的，这样可以提升性能, 并且减少了内存的分配与回收。然而，使用inBitmap有一些限制。特别是在Android 4.4 之前，只支持同等大小的位图。
             我们看来看看这个参数最基本的运用方法。
             
             ```

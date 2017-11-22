@@ -1,11 +1,11 @@
-##Vector简介
+## Vector简介
 Vector也是基于数组实现的，是一个动态数组，其容量能自动增长。
 
 Vector是JDK1.0引入了，它的很多实现方法都加入了同步语句，因此是线程安全的（其实也只是相对安全，有些时候还是要加入同步语句来保证线程的安全），可以用于多线程环境。
 
 Vector没有实现Serializable接口，因此它不支持序列化，实现了Cloneable接口，能被克隆，实现了RandomAccess接口，支持快速随机访问。
 
-##Vector源码剖析
+## Vector源码剖析
 Vector的源码如下（加入了比较详细的注释）：
 
 ```
@@ -482,7 +482,7 @@ public class Vector<E>
 }   
 ```
 
-##几点总结
+## 几点总结
 
 Vector的源码实现总体与ArrayList类似，关于Vector的源码，给出如下几点总结：
 

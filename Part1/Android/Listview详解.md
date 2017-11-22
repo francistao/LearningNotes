@@ -1,10 +1,10 @@
-#ListView详解
+# ListView详解
 ---
 直接继承自AbsListView，AbsListView继承自AdapterView，AdapterView又继承自ViewGroup。
 
 Adpater在ListView和数据源之间起到了一个桥梁的作用
 
-###RecycleBin机制
+### RecycleBin机制
 
 RecycleBin机制是ListView能够实现成百上千条数据都不会OOM最重要的一个原因。RecycleBin是AbsListView的一个内部类。
 

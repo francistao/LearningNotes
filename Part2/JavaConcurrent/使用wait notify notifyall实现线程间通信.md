@@ -1,4 +1,4 @@
-#使用wait/notify/notifyAll实现线程间通信
+# 使用wait/notify/notifyAll实现线程间通信
 ---
 
 在Java中，可以通过配合调用Object对象的wait（）方法和notify（）方法或notifyAll（）方法来实现线程间的通信。在线程中调用wait（）方法，将阻塞等待其他线程的通知（其他线程调用notify（）方法或notifyAll（）方法），在线程中调用notify（）方法或notifyAll（）方法，将通知其他线程从wait（）方法处返回。

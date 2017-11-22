@@ -133,7 +133,7 @@ git checkout [branch-name]
 git checkout -b [branch-name]
 ```
 
-##与github建立ssh通信，让Git操作免去输入密码的繁琐。
+## 与github建立ssh通信，让Git操作免去输入密码的繁琐。
 *   首先呢，我们先建立ssh密匙。
 > ssh key must begin with 'ssh-ed25519', 'ssh-rsa', 'ssh-dss', 'ecdsa-sha2-nistp256', 'ecdsa-sha2-nistp384', or 'ecdsa-sha2-nistp521'.  -- from github
 

@@ -1,4 +1,4 @@
-#AIDL
+# AIDL
 ---
 
 1. 创建一个接口，再里面定义方法
@@ -335,7 +335,7 @@ public class MainActivity extends Activity {
 
 将服务端的aidl文件完整的复制过来，包名一定要一致。
 
-##分析AIDL生成的代码
+## 分析AIDL生成的代码
 
 1. 服务端
 
@@ -441,7 +441,7 @@ reply.writeInt(_result);
 
 add同理，可以看到服务端通过AIDL生成Stub的类，封装了服务端本来需要写的代码。
 
-###客户端
+### 客户端
 
 客户端主要通过ServiceConnected与服务端连接
 

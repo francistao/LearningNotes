@@ -1,11 +1,11 @@
-#EventBus
+# EventBus
 ---
 
-###概述
+### 概述
 
 EventBus是一款针对Android优化的发布/订阅（publish/subscribe）事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。简化了应用程序内各组件间、组件与后台线程间的通信。优点是开销小，代码更优雅。以及将发送者和接收者解耦。比如请求网络，等网络返回时通过Handler或Broadcast通知UI，两个Fragment之间需要通过Listener通信，这些需求都可以通过EventBus实现。
 
-###EventBus作为一个消息总线，有三个主要的元素：
+### EventBus作为一个消息总线，有三个主要的元素：
 
 * Event：事件。可以是任意类型的对象
 * Subscriber：事件订阅者，接收特定的事件。在EventBus中，使用约定来指定事件订阅者以简化使用。即所有事件订阅都都是以onEvent开头的函数，具体来说，函数的名字是onEvent,onEventMainThread，onEventBackgroundThread，onEventAsync这四个，这个和
@@ -13,7 +13,7 @@ ThreadMode（下面讲）有关。
 * Publisher：事件发布者，用于通知 Subscriber 有事件发生。可以在任意线程任意位置发送事件，直接调用eventBus.post(Object) 方法，可以自己实例化 EventBus 
 对象，但一般使用默认的单例就好了：EventBus.getDefault()， 根据post函数参数的类型，会自动调用订阅相应类型事件的函数。
 
-###关于ThreadMode
+### 关于ThreadMode
 
 前面说了，Subscriber的函数只能是那4个，因为每个事件订阅函数都是和一个ThreadMode相关联的，ThreadMode指定了会调用的函数。有以下四个ThreadMode：
 
@@ -34,9 +34,9 @@ ThreadMode（下面讲）有关。
 
 **onEventAsync**：使用这个函数作为订阅函数，那么无论事件在哪个线程发布，都会创建新的子线程在执行onEventAsync。
 
-##基本用法
+## 基本用法
 
-###引入EventBus:
+### 引入EventBus:
 
 ```
 compile 'org.greenrobot:eventbus:3.0.0'
@@ -84,7 +84,7 @@ eventBus.unregister(this);
 最后，proguard 需要做一些额外处理:
 
 ```
-#EventBus
+# EventBus
  -keepclassmembers class ** {
     public void onEvent*(**);
     void onEvent*(**);

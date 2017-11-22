@@ -1,4 +1,4 @@
-#HashMap 和 HashTable 的底层实现和区别，两者和 ConcurrentHashMap 的区别。
+# HashMap 和 HashTable 的底层实现和区别，两者和 ConcurrentHashMap 的区别。
 
 HashMap和HashTable源代码级别的区别
 

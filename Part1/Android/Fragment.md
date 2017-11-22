@@ -1,14 +1,14 @@
-#Fragment
+# Fragment
 
-##为何产生
+## 为何产生
 * 同时适配手机和平板、UI和逻辑的共享。
 
-##介绍
+## 介绍
 * Fragment也会被加入回退栈中。
 * Fragment拥有自己的生命周期和接受、处理用户的事件
 * 可以动态的添加、替换和移除某个Fragment
 
-##生命周期
+## 生命周期
 * 必须依存于Activity
 
 ![Mou icon](http://img.blog.csdn.net/20140719225005356?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG1qNjIzNTY1Nzkx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
@@ -18,7 +18,7 @@
 
 生命周期中那么多方法，懵逼了的话我们就一起来看一下每一个生命周期方法的含义吧。
 
-##Fragment生命周期方法含义：
+## Fragment生命周期方法含义：
 * `public void onAttach(Context context)`
 	* onAttach方法会在Fragment于窗口关联后立刻调用。从该方法开始，就可以通过Fragment.getActivity方法获取与Fragment关联的窗口对象，但因为Fragment的控件未初始化，所以不能够操作控件。
 	
@@ -55,19 +55,19 @@
 * `public void onDetach()`
 	* 为Fragment生命周期中的最后一个方法，当该方法执行完后，Fragment与Activity不再有关联(分手！我们分手！！(╯‵□′)╯︵┻━┻)。
 
-##Fragment比Activity多了几个额外的生命周期回调方法：
+## Fragment比Activity多了几个额外的生命周期回调方法：
 * onAttach(Activity):当Fragment和Activity发生关联时使用
 * onCreateView(LayoutInflater, ViewGroup, Bundle):创建该Fragment的视图
 * onActivityCreate(Bundle):当Activity的onCreate方法返回时调用
 * onDestoryView():与onCreateView相对应，当该Fragment的视图被移除时调用
 * onDetach():与onAttach相对应，当Fragment与Activity关联被取消时调用
 
-###注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现
+### 注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现
 
-##Fragment与Activity之间的交互
+## Fragment与Activity之间的交互
 * Fragment与Activity之间的交互可以通过`Fragment.setArguments(Bundle args)`以及`Fragment.getArguments()`来实现。
 
-##Fragment状态的持久化。
+## Fragment状态的持久化。
 由于Activity会经常性的发生配置变化，所以依附它的Fragment就有需要将其状态保存起来问题。下面有两个常用的方法去将Fragment的状态持久化。
 
 * 方法一：
@@ -123,11 +123,11 @@
 
 		```
 
-##静态的使用Fragment
+## 静态的使用Fragment
 1. 继承Fragment，重写onCreateView决定Fragment的布局
 2. 在Activity中声明此Fragment,就和普通的View一样
 
-##Fragment常用的API
+## Fragment常用的API
 * android.support.v4.app.Fragment 主要用于定义Fragment
 * android.support.v4.app.FragmentManager 主要用于在Activity中操作Fragment，可以使用FragmentManager.findFragmenById，FragmentManager.findFragmentByTag等方法去找到一个Fragment
 * android.support.v4.app.FragmentTransaction 保证一些列Fragment操作的原子性，熟悉事务这个词
@@ -174,7 +174,7 @@
 
 ```
 
-##管理Fragment回退栈
+## 管理Fragment回退栈
 * 跟踪回退栈状态
 	* 我们通过实现*``OnBackStackChangedListener``*接口来实现回退栈状态跟踪，具体如下
  	```

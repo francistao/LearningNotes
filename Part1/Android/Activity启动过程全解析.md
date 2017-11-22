@@ -13,7 +13,7 @@
 * ActivityRecord，ActivityStack的管理对象，每个Activity在AMS对应一个* ActivityRecord，来记录Activity的状态以及其他的管理信息。其实就是服务器端的Activity对象的映像。
 * TaskRecord，AMS抽象出来的一个“任务”的概念，是记录ActivityRecord的栈，一个“Task”包含若干个ActivityRecord。AMS用TaskRecord确保Activity启动和退出的顺序。如果你清楚Activity的4种launchMode，那么对这个概念应该不陌生。
 
-###回答一些问题
+### 回答一些问题
 
 **zygote是什么？有什么作用？**
 
