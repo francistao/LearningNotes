@@ -1,8 +1,8 @@
-#Activity启动过程
+# Activity启动过程
 
 ---
 
-###一些基本的概念
+### 一些基本的概念
 
 * ActivityManagerServices，简称AMS，服务端对象，负责系统中所有Activity的生命周期
 * ActivityThread，App的真正入口。当开启App之后，会调用main()开始运行，开启消息循环队列，这就是传说中的UI线程或者叫主线程。与ActivityManagerServices配合，一起完成Activity的管理工作
