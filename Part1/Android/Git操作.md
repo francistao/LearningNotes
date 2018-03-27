@@ -119,7 +119,7 @@ git branch (branch-name)
 // 删除一个分支
 git branch -d (branch-nam)
 
-// 删除 remote 的分支
+// 提交 remote 的分支
 git push (remote-name) :(remote-branch)
 ```
 
