@@ -1,16 +1,16 @@
-#HashMap的hashcode的作用？
+# HashMap的hashcode的作用？
 1. hashCode的存在主要是用于查找的快捷性，如Hashtable，HashMap等，hashCode是用来在散列存储结构中确定对象的存储地址的；
 2. 如果两个对象相同，就是适用于equals(java.lang.Object) 方法，那么这两个对象的hashCode一定要相同；
 3. 如果对象的equals方法被重写，那么对象的hashCode也尽量重写，并且产生hashCode使用的对象，一定要和equals方法中使用的一致，否则就会违反上面提到的第2点；
 4. 两个对象的hashCode相同，并不一定表示两个对象就相同，也就是不一定适用于equals(java.lang.Object) 方法，只能够说明这两个对象在散列存储结构中，如Hashtable，他们“存放在同一个篮子里”。
 
-#什么时候需要重写？
+# 什么时候需要重写？
 
 一般的地方不需要重载hashCode，只有当类需要放在HashTable、HashMap、HashSet等等hash结构的集合时才会重载hashCode，那么为什么要重载hashCode呢？就HashMap来说，好比HashMap就是一个大内存块，里面有很多小内存块，小内存块里面是一系列的对象，可以利用hashCode来查找小内存块hashCode%size(小内存块数量)，所以当equal相等时，hashCode必须相等，而且如果是object对象，必须重载hashCode和equal方法。
 
 [对于equal和hashcode的理解，何时需要重写](http://blog.csdn.net/qq352773277/article/details/41675407)
 
-#如何解决哈希冲突？
+# 如何解决哈希冲突？
 
 1. 线性探查法(Linear Probing)
 2. 线性补偿探测法
@@ -20,7 +20,7 @@
 
 
 
-#查找的时候流程是如何？
+# 查找的时候流程是如何？
 
 1.hashcode是用来查找的，如果你学过数据结构就应该知道，在查找和排序这一章有
 例如内存中有这样的位置

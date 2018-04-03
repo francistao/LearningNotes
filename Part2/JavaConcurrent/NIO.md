@@ -1,18 +1,18 @@
-#NIO
+# NIO
 
 ---
 
 Java NIO(New IO)是一个可以替代标准Java IO API的IO API(从Java1.4开始)，Java NIO提供了与标准IO不同的IO工作方式。
 
-###Java NIO: Channels and Buffers（通道和缓冲区）
+### Java NIO: Channels and Buffers（通道和缓冲区）
 
 标准的俄IO基于字节流和字符流进行操作的，而NIO是基于通道(Channel)和缓冲区(Buffer)进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入通道也类似。
 
-###Java NIO: Non-blocking IO（非阻塞IO）
+### Java NIO: Non-blocking IO（非阻塞IO）
 
 Java NIO可以让你非阻塞的使用IO，例如：当线程从通道读取数据到缓冲区时，线程还是进行其他事情。当数据被写入到缓冲区时，线程可以继续处理它。从缓冲区写入通道也类似。
 
-###Java NIO: Selectors(选择器)
+### Java NIO: Selectors(选择器)
 
 Java NIO引入了选择器的概念，选择器用于监听多个通道的事件(比如：连接打开，数据到达)。因此，单个的线程可以监听多个数据通道。
 
@@ -64,7 +64,7 @@ Selector允许单线程处理多个Channel。如果你的应用打开了多个�
 要使用Selector，得向Selector注册Channel，然后调用它的select()方法。这个方法会一直阻塞到某个注册的通道有事件就绪。一旦这个方法返回，线程就可以处理这些事件，事件的例子有如新连接进来，数据接送等。
 
 
-##Channel
+## Channel
 ---
 
 Java NIO的通道类似流，但又有些不同：
@@ -107,7 +107,7 @@ aFile.close();
 注意 buf.flip() 的调用，首先读取数据到Buffer，然后反转Buffer,接着再从Buffer中读取数据。
 
 
-##Buffer
+## Buffer
 
 Java NIO中的Buffer用于和NIO通道进行交互。如你所知，数据是从通道读入缓冲区，从缓冲区写入到通道中的。
 

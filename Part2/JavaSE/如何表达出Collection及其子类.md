@@ -1,4 +1,4 @@
-#如何介绍数据结构
+# 如何介绍数据结构
 
 1. 是泛型？接口？类？
 2. 是个什么？
@@ -8,7 +8,7 @@
 6. 子类？
 
 
-#Collection
+# Collection
 ---
 1. 是一个泛型的接口
 2. 继承了超级接口Iterable
@@ -19,7 +19,7 @@
 7. 没有具体的直接实现，但提供了更具体的子接口，如Set、List等
 
 
-#List
+# List
 ---
 1. 是一个接口，继承了接口Collection
 2. List是有序的Collection，能够精确控制插入、获取的位置
@@ -27,7 +27,7 @@
 4. 它的直接实现类有ArrayList，LinkedList，Vector等
 5. List有自己的迭代器ListIterator，可以通过这个迭代器进行逆序的迭代，以及用迭代器设置元素的值
 
-#ArrayList
+# ArrayList
 ---
 1. ArrayList实现了Collection接口
 2. ArrayList是一个顺序表。大小可变。
@@ -35,7 +35,7 @@
 4. ArrayList相比Vector是线程不安全的
 
 
-#LinkedList
+# LinkedList
 ---
 1. LinkedList泛型接口
 2. 链表

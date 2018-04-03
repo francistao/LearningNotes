@@ -1,7 +1,7 @@
-#Activity启动过程
+# Activity启动过程
 ---
 
-###一些基本的概念
+### 一些基本的概念
 
 * ActivityManagerServices，简称AMS，服务端对象，负责系统中所有Activity的生命周期
 * ActivityThread，App的真正入口。当开启App之后，会调用main()开始运行，开启消息循环队列，这就是传说中的UI线程或者叫主线程。与ActivityManagerServices配合，一起完成Activity的管理工作
@@ -12,7 +12,7 @@
 * ActivityRecord，ActivityStack的管理对象，每个Activity在AMS对应一个* ActivityRecord，来记录Activity的状态以及其他的管理信息。其实就是服务器端的Activity对象的映像。
 * TaskRecord，AMS抽象出来的一个“任务”的概念，是记录ActivityRecord的栈，一个“Task”包含若干个ActivityRecord。AMS用TaskRecord确保Activity启动和退出的顺序。如果你清楚Activity的4种launchMode，那么对这个概念应该不陌生。
 
-###回答一些问题
+### 回答一些问题
 
 **zygote是什么？有什么作用？**
 

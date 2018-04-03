@@ -1,6 +1,6 @@
-#《Android开发艺术探索》第三章笔记
+# 《Android开发艺术探索》第三章笔记
 ---
-##View的基础知识
+## View的基础知识
 
 * 什么是View
 
@@ -112,7 +112,7 @@ VelocityTracker的使用方式：
 弹性滑动对象，用于实现View的弹性滑动。Scroller本身无法让View弹性滑动，它需要和View的computeScroll方法配合使用才能共同完成这个功能。
 
 
-##View的滑动
+## View的滑动
 
 通过三种方式可以实现View的滑动
 
@@ -137,7 +137,7 @@ scrollTo和scrollBy方法只能改变view内容的位置而不能改变view在�
 
 动画兼容库nineoldandroids中的ViewHelper类提供了很多的get/set方法来为属性动画服务，例如setTranslationX和setTranslationY方法，这些方法是没有版本要求的。
 
-##弹性滑动
+## 弹性滑动
 
 1、使用Scroller
 Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要配合view的computeScroll方法才能完成弹性滑动的效果，它不断地让view重绘，而每一次重绘距滑动起始时间会有一个时间间隔，通过这个时间间隔Scroller就可以得出view的当前的滑动位置，知道了滑动位置就可以通过scrollTo方法来完成view的滑动。就这样，view的每一次重绘都会导致view进行小幅度的滑动，而多次的小幅度滑动就组成了弹性滑动，这就是Scroller的工作原理。
@@ -148,7 +148,7 @@ Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要
 3、使用延时策略
 使用延时策略来实现弹性滑动，它的核心思想是通过发送一系列延时消息从而达到一种渐进式的效果，具体来说可以使用Handler的sendEmptyMessageDelayed(xxx)或view的postDelayed方法，也可以使用线程的sleep方法。
 
-##View的事件分发机制
+## View的事件分发机制
 
 1、事件分发机制的三个重要方法
 
@@ -185,7 +185,7 @@ Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要
 
 我们可以大致了解点击事件的传递规则：对于一个根ViewGroup来说，点击事件产生后，首先会传递给它，这时它的dispatchTouchEvent会被调用，如果这个ViewGroup的onInterceptTouchEvent方法返回true就表示它要拦截当前事件，接着事件就会交给这个ViewGroup处理，即它的onTouchEvent方法就会被调用；如果这个ViewGroup的onInterceptTouchEvent方法返回false就表示它不拦截当前事件，这时当前事件就会继续传递给它的子元素，接着子元素的dispatchTouchEvent方法就会被调用，如此反复直到事件被最终处理。
 
-####OnTouchListener的优先级比onTouchEvent要高
+#### OnTouchListener的优先级比onTouchEvent要高
 
 如果给一个view设置了OnTouchListener，那么OnTouchListener中的onTouch方法会被回调。这时事件如何处理还要看onTouch的返回值，如果返回false，那么当前view的onTouchEvent方法会被调用；如果返回true，那么onTouchEvent方法将不会被调用。
 在onTouchEvent方法中，如果当前view设置了OnClickListener，那么它的onClick方法会被调用，所以OnClickListener的优先级最低。
@@ -204,7 +204,7 @@ Scroller的工作原理：Scroller本身并不能实现view的滑动，它需要
 * View的enable属性不影响onTouchEvent的默认返回值，哪怕一个View是disable状态的，只要它的clickable或者longClickable有一个为true，那么它的onTouchEvent就返回true
 * 事件传递过程总是先传递给父元素，然后再由父元素分发给子view，通过requestDisallowInterceptTouchEvent方法可以在子元素中干预父元素的事件分发过程，但是ACTION_DOWN事件除外，即当面对ACTION_DOWN事件时，ViewGroup总是会调用自己的onInterceptTouchEvent方法来询问自己是否要拦截事件。
 
-##View的滑动冲突
+## View的滑动冲突
 
 1、常见的滑动冲突场景
 

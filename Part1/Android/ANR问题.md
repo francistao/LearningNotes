@@ -1,4 +1,4 @@
-#ANR
+# ANR
 ---
 
 1、ANR排错一般有三种类型
@@ -42,13 +42,13 @@
 
 最近出来一个叫LeakCanary
 
-#FC(Force Close)
-##什么时候会出现
+# FC(Force Close)
+## 什么时候会出现
 1. Error
 2. OOM，内存溢出
 3. StackOverFlowError
 4. Runtime,比如说空指针异常
 
-##解决的办法
+## 解决的办法
 1. 注意内存的使用和管理
 2. 使用Thread.UncaughtExceptionHandler接口
