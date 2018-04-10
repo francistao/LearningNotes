@@ -10,7 +10,7 @@ ArrayList源码剖析
 
 ArrayList的源码如下（加入了比较详细的注释）：
 
-```
+```java
 package java.util;    
    
 public class ArrayList<E> extends AbstractList<E>    
@@ -390,7 +390,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 首先来看Arrays.copyof()方法。它有很多个重载的方法，但实现思路都是一样的，我们来看泛型版本的源码：
 
-```
+```java
 public static <T> T[] copyOf(T[] original, int newLength) {  
     return (T[]) copyOf(original, newLength, original.getClass());  
 }  
@@ -398,7 +398,7 @@ public static <T> T[] copyOf(T[] original, int newLength) {
 
 很明显调用了另一个copyof方法，该方法有三个参数，最后一个参数指明要转换的数据的类型，其源码如下：
 
-```
+```java
 public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {  
     T[] copy = ((Object)newType == (Object)Object[].class)  
         ? (T[]) new Object[newLength]  
@@ -418,7 +418,7 @@ public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]>
 
 第二个，<T> T[] toArray(T[] a)方法。该方法可以直接将ArrayList转换得到的Array进行整体向下转型（转型其实是在该方法的源码中实现的），且从该方法的源码中可以看出，参数a的大小不足时，内部会调用Arrays.copyOf方法，该方法内部创建一个新的数组返回，因此对该方法的常用形式如下：
 
-```
+```java
 public static Integer[] vectorToArray2(ArrayList<Integer> v) {    
     Integer[] newText = (Integer[])v.toArray(new Integer[0]);    
     return newText;    
