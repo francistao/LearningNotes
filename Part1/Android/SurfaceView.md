@@ -1,16 +1,16 @@
-##为什么要使用SurfaceView来实现动画？
-###因为View的绘图存在以下缺陷：
+## 为什么要使用SurfaceView来实现动画？
+### 因为View的绘图存在以下缺陷：
 1. View缺乏双缓冲机制
 2. 当程序需要更新View上的图像时，程序必须重绘View上显示的整张图片
 3. 新线程无法直接更新View组件
 
 
 
-##SurfaceView的绘图机制
+## SurfaceView的绘图机制
 * 一般会与SurfaceView结合使用
 * 调用SurfaceView的getHolder()方法即可获得SurfaceView关联的SurfaceHolder
 
-##SurfaceHolder提供了如下方法来获取Canvas对象
+## SurfaceHolder提供了如下方法来获取Canvas对象
 1. Canvas lockCanvas():锁定整个SurfaceView对象，获取该Surface上的Canvas
 2. Canvas lockCanvas(Rect dirty):锁定SurfaceView上Rect划分的区域，获取该Surface上的Canvas
 3. unlockCanvasAndPost(canvas):释放绘图、提交所绘制的图形，需要注意，当调用SurfaceHolder上的unlockCanvasAndPost方法之后，该方法之前所绘制的图形还处于缓冲之中，下一次lockCanvas()方法锁定的区域可能会“遮挡”它

@@ -1,12 +1,12 @@
-#Android系统机制
+# Android系统机制
 ---
-###APP启动过程
+### APP启动过程
 
 1. Launcher线程捕获onclick的点击事件，调用Launcher.startActivitySafely，进一步调用Launcher.startActivity，最后调用父类Activity的startActivity。
 2. Activity和ActivityManagerService交互，引入Instrumentation，将启动请求交给Instrumentation，调用Instrumentation.execStartActivity
 3. 
 
-###Android内核解读-应用的安装过程
+### Android内核解读-应用的安装过程
 
 [http://blog.csdn.net/singwhatiwanna/article/details/19578947](http://blog.csdn.net/singwhatiwanna/article/details/19578947)
 apk的安装过程分为两步：
@@ -15,14 +15,14 @@ apk的安装过程分为两步：
 2. 为应用创建数据目录(/data/data/package name/)、提取dex文件到指定目录(/data/delvik-cache/)、修改系统包管理信息。
 
 
-###View的事件体系
+### View的事件体系
 
 
 
-###Handler消息机制
+### Handler消息机制
 
 
-###AsyncTask
+### AsyncTask
 AyncTask是一个抽象类。
 
 需要重写的方法有四个：
@@ -88,7 +88,7 @@ new DownloadTask().execute();
 
 
 
-###图片缓存机制
+### 图片缓存机制
 
 
 

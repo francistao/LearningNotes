@@ -1,8 +1,8 @@
-#MVC,MVP,MVVM的区别
+# MVC,MVP,MVVM的区别
 ---
 
 
-#MVC
+# MVC
 软件可以分为三部分
 
 * 视图（View）:用户界面
@@ -17,13 +17,13 @@
 
 Tips：所有的通信都是单向的。
 
-#互动模式
+# 互动模式
 接受用户指令时，MVC可以分为两种方式。一种是通过View接受指令，传递给Controller。
 
 另一种是直接通过Controller接受指令
 
 
-#MVP
+# MVP
 
 MVP模式将Controller改名为Presenter，同时改变了通信方向。
 
@@ -32,7 +32,7 @@ MVP模式将Controller改名为Presenter，同时改变了通信方向。
 3. View非常薄，不部署任何业务逻辑，称为"被动视图"(Passive View)，即没有任何主动性，而Presenter非常厚，所有逻辑都部署在那里。
 
 
-#MVVM
+# MVVM
 
 MVVM模式将Presenter改名为ViewModel，基本上与MVP模式完全一致。
 

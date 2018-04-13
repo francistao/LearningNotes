@@ -1,7 +1,7 @@
-#Handler内存泄漏分析及解决
+# Handler内存泄漏分析及解决
 ---
 
-###一、介绍
+### 一、介绍
 
 首先，请浏览下面这段handler代码：
 
@@ -23,7 +23,7 @@ public class SampleActivity extends Activity {
 
 ```
 
-###二、分析
+### 二、分析
 
 1、 Android角度
 
@@ -31,13 +31,13 @@ public class SampleActivity extends Activity {
 
 另外，主线程的Looper对象会伴随该应用程序的整个生命周期。
 
-然后，当主线程里，实例化一个Handler对象后，它就会自动与主线程Looper的消息队列关联起来。所有发送到消息队列的消息Message都会拥有一个对Handler的引用，所以当Looper来处理消息时，会据此回调[Handler#handleMessage(Message)]方法来处理消息。
+然后，当主线程里，实例化一个Handler对象后，它就会自动与主线程Looper的消息队列关联起来。所有发送到消息队列的消息Message都会拥有一个对Handler的引用，所以当Looper来处理消息时，会据此回调[Handler# handleMessage(Message)]方法来处理消息。
 
 2、 Java角度
 
 在java里，非静态内部类 和 匿名类 都会潜在的引用它们所属的外部类。但是，静态内部类却不会。
 
-###三、泄漏来源
+### 三、泄漏来源
 
 请浏览下面一段代码：
 
@@ -76,7 +76,7 @@ public class SampleActivity extends Activity {
 注意，上面代码中的Runnable类--非静态匿名类--同样持有对其外部类的引用。从而也导致泄漏。
 
 >>>>>>> c67abfcfd66909095068cb5f0c8632dc5547131b
-###四、泄漏解决方案
+### 四、泄漏解决方案
 
 首先，上面已经明确了内存泄漏来源：
 
@@ -137,7 +137,7 @@ public class SampleActivity extends Activity {
 }
 ```
 
-###五、小结
+### 五、小结
 
 <<<<<<< HEAD
 虽然静态类与非静态类之间的区别并不大，但是对于Android开发者而言却是必须理解的。至少我们要清楚，如果一个内部类实例的生命周期比Activity更长，那么我们千万不要使用非静态的内部类。最好的做法是，使用静态内部类，然后在该类里使用弱引用来指向所在的Activity。

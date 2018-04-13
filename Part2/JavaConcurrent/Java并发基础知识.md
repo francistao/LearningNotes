@@ -1,4 +1,5 @@
-#Java并发
+# Java并发
+
 ---
 
 （Executor框架和多线程基础）
@@ -80,7 +81,7 @@ sleep()方法是线程类（Thread）的静态方法，导致此线程暂停执�
 
 
 
-###3、IO（IO,NIO，目前okio已经被集成Android包）
+### 3、IO（IO,NIO，目前okio已经被集成Android包）
 
 **IO框架主要用到什么设计模式**
 

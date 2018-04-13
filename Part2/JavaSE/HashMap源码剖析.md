@@ -1,11 +1,11 @@
-###HashMap简介
+### HashMap简介
    HashMap是基于哈希表实现的，每一个元素都是一个key-value对，其内部通过单链表解决冲突问题，容量不足（超过了阈值）时，同样会自动增长。
 
 HashMap是非线程安全的，只是用于单线程环境下，多线程环境下可以采用concurrent并发包下的concurrentHashMap。
 
 HashMap实现了Serializable接口，因此它支持序列化，实现了Cloneable接口，能被克隆。
 
-###HashMap源码剖析
+### HashMap源码剖析
 
 HashMap的源码如下（加入了比较详细的注释）：
 
@@ -766,7 +766,7 @@ public class HashMap<K,V>
 }   
 ```
 
-###几点总结
+### 几点总结
 1、首先要清楚HashMap的存储结构，如下图所示：
 
 ![](http://img.blog.csdn.net/20140701191403764?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbnNfY29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)

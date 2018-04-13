@@ -1,5 +1,7 @@
-#Android：
+# Android：
+
 ---
+
 **五种布局： FrameLayout 、 LinearLayout 、 AbsoluteLayout 、 RelativeLayout 、 TableLayout 全都继承自ViewGroup，各自特点及绘制效率对比。**
 
 * FrameLayout(框架布局)
@@ -178,7 +180,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 **Fragment的生命周期和activity如何的一个关系**
 
 这我们引用本知识库里的一张图片：
-![Mou icon](https://github.com/GeniusVJR/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
+![Mou icon](https://github.com/HuYingBao/LearningNotes/blob/master/Part1/Android/FlowchartDiagram.jpg?raw=true)
 
 
 **为什么在Service中创建子线程而不是Activity中**

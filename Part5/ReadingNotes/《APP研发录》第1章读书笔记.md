@@ -1,7 +1,7 @@
-#《APP研发录》读书笔记
+# 《APP研发录》读书笔记
 ---
-##第一章
-###1.1重新规划Android项目结构
+## 第一章
+### 1.1重新规划Android项目结构
 
 重新规划Android项目的目录结构，分两步走：
 
@@ -26,7 +26,7 @@
 	* interfaces:真正意义上的接口，命名以I作为开头
 	* listener:基于Listener的接口，命名以On作为开头
 	
-###1.2为Activity定义新的生命周期
+### 1.2为Activity定义新的生命周期
 
 可以把onCreate方法拆成三个子方法
 
@@ -34,13 +34,13 @@
 * initViews:加载layout布局文件，初始化控件，为控件挂上事件方法
 * loadData:调用MobileAPI获取数据
 
-###1.3统一事件编程模型
+### 1.3统一事件编程模型
 
 只要在一个团队内部达成了协议，决定使用某种事件编程方式，所有开发人员就要按照同样的方式编写代码。
 
-###1.4实体化编程
+### 1.4实体化编程
 
-####1.4.1在网络请求中使用实体
+#### 1.4.1在网络请求中使用实体
 
 一些开发人员不使用实体化编程，在获取MobileAPI网络请求返回的JSON数据时，使用JSONObject或者JSONArray来承载数据，然后把返回的数据当作一个字典，根据键取出响应的值。介绍fastJSON和GSON这种实体化编程的方式.
 
@@ -70,7 +70,7 @@ Gson gson = new Gson();
 				}
 ```
 
-####1.4.3在页面跳转中实现实体
+#### 1.4.3在页面跳转中实现实体
 
 在一个页面中，数据的来源有两种：
 1. 调用MobileAPI获取JSON数据
@@ -170,7 +170,7 @@ public class CinemaBean implements Serializable {
 
 ```
 
-###1.5Adapter模版
+### 1.5Adapter模版
 不对Adapter的写法进行规范，就会写出以下的Adapter
 
 * 很多开发人员都喜欢将Adapter内嵌在Activity中，一般会使用SimpleAdapter
@@ -268,7 +268,7 @@ public View getView(final int position, View convertView,
 	}
 ```
 
-###1.6类型安全转换函数
+### 1.6类型安全转换函数
 
 在每天统计线上崩溃的时候，我们发现因为类型转换不正确导致的崩溃占了很大的比例。于是去检查程序中的所有类型转换，发现主要集中在两个地方：Object类型的对象，substring函数。
 
