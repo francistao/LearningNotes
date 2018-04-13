@@ -206,6 +206,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 ---
 
 **Service的两种启动方法，有什么区别**
+
 1.在Context中通过``public boolean bindService(Intent service,ServiceConnection conn,int flags)`` 方法来进行Service与Context的关联并启动，并且Service的生命周期依附于Context(**不求同时同分同秒生！但求同时同分同秒屎！！**)。
 
 2.通过`` public ComponentName startService(Intent service)``方法去启动一个Service，此时Service的生命周期与启动它的Context无关。
@@ -216,6 +217,8 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
         android:name=".packnameName.youServiceName"
         android:enabled="true" />
 ```
+
+![服务生命周期](https://developer.android.google.cn/images/service_lifecycle.png)
 
 **广播(Broadcast Receiver)的两种动态注册和静态注册有什么区别。**
 
