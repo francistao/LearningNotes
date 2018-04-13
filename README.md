@@ -1,5 +1,7 @@
 # LearningNotes
   ---
+  
+  [![](https://badge.juejin.im/entry/576a67902e958a00699faaec/likes.svg?style=flat-square)](https://juejin.im/entry/576a67902e958a00699faaec/detail)
 
 ## 第一部分：
 
