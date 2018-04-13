@@ -313,9 +313,12 @@ Android为此数据库提供了一个名为SQLiteDatabase的类，封装了一�
 如果在每一个Activity的onCreate里判断是否被强杀，冗余了，封装到Activity的父类中，如果被强杀，跳转回主界面，如果没有被强杀，执行Activity的初始化操作，给主界面传递intent参数，主界面会调用onNewIntent方法，在onNewIntent跳转到欢迎页面，重新来一遍流程。
 
 **Json有什么优劣势。**
-
+1.易读性
+2.高性能解析
+3.多语言
+4.解析Json的框架丰富
 **怎样退出终止App**
-
+首先我对这个问题很费解，再我用过的任何app中没有一个入口是“退出App”。另一个角度退出app就是栈中没有activity。不用集合保存你每次创建的activity 。也不用system.exit(0)。一点也不高大上。我能想到一个简单方法。就是在MainActivity的onNewIntent 方法中监听一个标识比如“exit”。在退出的时候加上一个flag CLEAR_TOP.然后再finish掉MianActivity。
 **Asset目录与res目录的区别。**
 res 目录下面有很多文件，例如 drawable,mipmap,raw 等。res 下面除了 raw 文件不会被压缩外，其余文件都会被压缩。同时 res目录下的文件可以通过R 文件访问。Asset 也是用来存储资源，但是 asset 文件内容只能通过路径或者 AssetManager 读取。 [官方文档](https://developer.android.com/studio/projects/index.html)
 
