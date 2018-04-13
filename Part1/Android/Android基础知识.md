@@ -52,7 +52,7 @@
 * Activity退居后台，且系统内存不足，
   系统会杀死这个后台状态的Activity（此时这个Activity引用仍然处在任务栈中，只是这个时候引用指向的对象已经为null），若再次回到这个Activity,则会走onCreate()–>onStart()—>onResume()(将重新走一次Activity的初始化生命周期)
 * 锁屏：`onPause()->onStop()`
-* 解锁：`onStart()->onResume()`
+* 解锁：`onRestart()->onStart()->onResume()`
   
 * 更多流程分支，请参照以下生命周期流程图
 	![](http://img.blog.csdn.net/20130828141902812)
