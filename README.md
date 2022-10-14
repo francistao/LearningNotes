@@ -125,7 +125,7 @@
     * [数组](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/数组.md)
     * 链表
     * [栈和队列](https://github.com/GeniusVJR/LearningNotes/blob/master/Part3/DataStructure/栈和队列.md)
-    * 字符串
+    * [字符串](https://www.scaler.com/topics/data-structures/string-in-data-structure/)
     * 树
     * 图
 * [Algorithm(算法)]()
